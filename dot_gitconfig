@@ -1,0 +1,44 @@
+[user]
+name = MTungusov
+email = mtungusov@gmail.com
+
+[checkout]
+defaultRemote = origin
+
+[color]
+ui = true
+
+[commit]
+template = ~/.gitmessage
+
+[core]
+excludesfile = /Users/misha/.gitignore
+autocrlf = false
+safecrlf = true
+
+[diff]
+external = difft
+
+[init]
+defaultBranch = master
+
+[filter "lfs"]
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+
+[pager]
+difftool = true
+
+[alias]
+a  = add
+br = branch
+c  = commit
+co = checkout
+d  = diff
+l  = log --pretty=oneline --abbrev-commit
+ll = log --pretty=format:'%C(yellow)d%h%Creset %C(bold red)%d%Creset %C(green)%ad%Creset | %s [%C(bold cyan)%an%Creset]' --date=short --graph
+r  = remote -v
+st = status
+sw = switch

@@ -1,0 +1,115 @@
+;; The deps.edn file describes the information needed to build a classpath.
+;;
+;; When using the `clojure` or `clj` script, there are several deps.edn files
+;; that are combined:
+;; - install-level
+;; - user level (this file)
+;; - project level (current directory when invoked)
+;;
+;; For all attributes other than :paths, these config files are merged left to right.
+;; Only the last :paths is kept and others are dropped.
+;;
+;; Original: https://github.com/practicalli/clojure-deps-edn/blob/live/deps.edn
+;;
+
+{
+  ;; Paths
+  ;;   Directories in the current project to include in the classpath
+
+  ;; :paths ["src"]
+
+  ;; External dependencies
+
+  ;; :deps {
+  ;;   org.clojure/clojure {:mvn/version "1.10.3"}
+  ;; }
+
+  ;; Aliases
+	;;   resolve-deps aliases (-R) affect dependency resolution, options:
+	;;     :extra-deps - specifies extra deps to add to :deps
+	;;     :override-deps - specifies a coordinate to use instead of that in :deps
+	;;     :default-deps - specifies a coordinate to use for a lib if one isn't found
+	;;   make-classpath aliases (-C) affect the classpath generation, options:
+	;;     :extra-paths - vector of additional paths to add to the classpath
+	;;     :classpath-overrides - map of lib to path that overrides the result of resolving deps
+
+ :aliases
+ {
+  ;; ---------------------------------------------------
+  ;; Running a REPL
+
+
+  ;; Run an interactive Clojure REPL with nREPL connection and CIDER libraries
+  ;; clojure -M:repl/cider
+  :repl/cider
+  {:extra-deps {nrepl/nrepl       {:mvn/version "1.0.0"}
+                cider/cider-nrepl {:mvn/version "0.28.7"}}
+   :main-opts  ["-m" "nrepl.cmdline"
+                "--middleware" "[cider.nrepl/cider-middleware]"
+                "--interactive"]}
+
+
+  ;; Clojure REPL with rebel readline with nrepl for editor connection
+  ;; https://github.com/bhauman/rebel-readline
+  ;; Conjure: opening a Clojure file will automatically connect to the REPL process
+  ;; CIDER: run `cider-connect-clj` and select REPL host and port
+  ;; Calva: connect to REPL command and select build tool, REPL host and port
+
+  ;; clojure -M:repl/rebel
+  :repl/rebel
+  {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
+   :main-opts  ["-m" "rebel-readline.main"]}
+
+
+  ;; ---------------------------------------------------
+  ;; Searching
+
+
+  ;; find-deps - fuzzy search Maven & Clojars and add deps to deps.edn
+  ;; https://github.com/hagmonk/find-deps
+  ;; clojure -M:search/libraries http-kit  # fuzzy search for dependency
+  ;; clojure -M:search/libraries http-kit ring compojure # multiple deps
+  ;; clojure -M:search/libraries --format:merge http-kit # merge dep into deps.edn file
+  :search/libraries
+  {:extra-deps
+   {find-deps/find-deps
+    {:git/url "https://github.com/hagmonk/find-deps"
+     :sha     "9bf23a52cb0a8190c9c2c7ad1d796da802f8ce7a"}}
+   :main-opts ["-m" "find-deps.core"]}
+
+
+  ;; Dependency version management
+  ;; https://github.com/liquidz/antq
+  ;; Manage versions for maven and git dependencies
+
+  ;; - report project dependencies that have newer versions available:
+  ;; cd project-directory && clojure -T:search/outdated
+  ;; - update library versions in this deps.edn file:
+  ;; cd $XDG_CONFIG_HOME/clojure && clojure -T:search/outdated
+  :search/outdated
+  {:replace-paths ["."]
+   :replace-deps  {com.github.liquidz/antq {:mvn/version "2.2.962"}
+                   org.slf4j/slf4j-nop     {:mvn/version "2.0.5"}}
+   :exec-fn antq.tool/outdated
+   :exec-args {:directory ["."] ; default
+               :exclude ["com.cognitect/rebl"
+                         "org.openjfx/javafx-base"
+                         "org.openjfx/javafx-controls"
+                         "org.openjfx/javafx-fxml"
+                         "org.openjfx/javafx-swing"
+                         "org.openjfx/javafx-web"]
+               ;; :focus ["com.github.liquidz/antq"]
+               :skip ["boot" "leiningen"]
+               :reporter "table" ; json edn format
+               :verbose false
+               :upgrade false
+               :force   false}}
+  }
+
+  ;; Provider attributes
+
+  ;; :mvn/repos {
+  ;;   "central" {:url "https://repo1.maven.org/maven2/"}
+  ;;   "clojars" {:url "https://repo.clojars.org/"}
+  ;; }
+}

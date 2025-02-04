@@ -1,0 +1,77 @@
+# OSX
+._*
+.DS_Store
+
+# Virtualenv
+venv
+.venv
+.env
+.direnv
+
+
+# Emacs backups
+*~
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Others
+.cache/
+.calva
+.classpath
+.clj-kondo
+.cpcache
+.git
+.gradle
+.hg
+.hgignore
+.lein-*
+.lsp
+.nrepl-port
+.osidian
+*.pid
+.project
+.rake_tasks
+.rebel_*
+.rubocop_todo.yml
+.settings
+.shadow-cljs/
+.svn
+.tool-*
+.vscode/
+
+# Builds and Logs
+build
+classes/**/*
+files/
+keys/**/*
+log/**/*
+logs/**/*
+lsp/**/*
+node_modules/
+out/
+target/
+tmp/**/*
+*.log
+
+# Large files
+*.csv
+*.jar
+*.pdf
+*.sqlite
+*.tar.gz
+*.tsv
+*.zip
+:memory*
+
+# Devs files
+.hugo_build.lock
+gradle
+gradlew*
+package-lock.json
+*.pyc
+*.lock
+
+# Sensitive info
+secrets.e*
