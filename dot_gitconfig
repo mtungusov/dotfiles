@@ -33,7 +33,7 @@ difftool = true
 
 [alias]
 a  = add
-br = branch
+b = branch -a
 c  = commit
 co = checkout
 d  = diff
