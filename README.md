@@ -234,6 +234,8 @@ mise reshim
 
 ### clojure
 
+cp deps.edn from https://github.com/practicalli/clojure-cli-config/tree/main
+
 ```shell
 mise latest clojure
 mise use -g --pin clojure@1.12.0.1501
