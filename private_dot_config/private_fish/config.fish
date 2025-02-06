@@ -47,7 +47,11 @@ set -gxa CPPFLAGS "-I$(brew --prefix sqlite)/include"
 # Ruby enable YJIT
 set -gx RUBY_CONFIGURE_OPTS --enable-yjit
 
-set -gx EDITOR "emacs -nw"
+# Editor
+if type -q emacs
+   alias e "emacs -Q -nw -l '~/.config/emacs/nano.el'"
+   set -gx EDITOR "e"
+end
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
