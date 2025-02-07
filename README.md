@@ -71,6 +71,11 @@ brew install MonitorControl
 ## Input Fonts
 https://input.djr.com/
 
+## font-symbols-only-nerd-font
+```shell
+brew install font-symbols-only-nerd-font
+```
+
 # Editors
 
 ## Sublime Text

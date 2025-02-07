@@ -75,6 +75,15 @@ if status is-interactive
     end
 end
 
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+       builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
+
 # alias go-vpn "ssh -t vpn-work 'tmux -CC new -A -s main'"
 
 if type -q git
