@@ -7,6 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "language_models": {
+    "openai": {
+      "version": "1",
+      "api_url": "http://127.0.0.1:1234"
+    }
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "lmstudio",
+      "model": "qwen2.5-coder-14b-instruct-mlx"
+    },
+    "version": "2"
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -19,6 +32,11 @@
     "mode": "system",
     "light": "One Light",
     "dark": "Andromeda"
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
   },
   "languages": {
     "Ruby": {
