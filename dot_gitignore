@@ -42,18 +42,18 @@ venv
 .vscode/
 
 # Builds and Logs
+*.log
 build
-classes/**/*
+classes/
 files/
-keys/**/*
-log/**/*
-logs/**/*
-lsp/**/*
+keys/
+log/
+logs/
+lsp/
 node_modules/
 out/
 target/
-tmp/**/*
-*.log
+tmp/
 
 # Large files
 *.csv
