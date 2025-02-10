@@ -48,6 +48,8 @@ set -gxa CPPFLAGS "-I$(brew --prefix sqlite)/include"
 set -gx RUBY_CONFIGURE_OPTS --enable-yjit
 
 # Editor
+set -gx EDITOR "vi"
+
 if type -q emacs
    alias e "emacs -Q -nw -l '~/.config/emacs/nano.el'"
    set -gx EDITOR "e"
