@@ -31,7 +31,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Andromeda"
+    "dark": "One Dark"
   },
   "git": {
     "inline_blame": {
