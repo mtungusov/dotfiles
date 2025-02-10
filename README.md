@@ -217,6 +217,8 @@ ruby --yjit -v
 ### python
 
 https://mise.jdx.dev/lang/python.html
+-or-
+UV (https://docs.astral.sh/uv/) ?
 
 ```shell
 brew install openssl readline sqlite3 xz zlib tcl-tk
