@@ -175,7 +175,7 @@
 
 ;; --- Minimal key bindings ---------------------------------------------------
 (defun nano-quit ()
-  "Quit minibuffer from anywhere (code from Protesilaos Stavrou)"
+  "Quit minibuffer from anywhere (code from Protesilaos Stavrou)."
 
   (interactive)
   (cond ((region-active-p) (keyboard-quit))
@@ -184,13 +184,22 @@
         (t (keyboard-quit))))
 
 (defun nano-kill ()
-  "Delete frame or kill emacs if there is only one frame left"
+  "Delete frame or kill emacs if there is only one frame left."
 
   (interactive)
   (condition-case nil
       (delete-frame)
     (error (save-buffers-kill-terminal))))
 
+(defun crux-other-window-or-switch-buffer ()
+  "Call `other-window' if more than one window is visible.
+Switch to most recent buffer otherwise."
+  (interactive)
+  (if (one-window-p)
+      (switch-to-buffer nil)
+    (other-window 1)))
+
+(bind-key "C-x o" #'crux-other-window-or-switch-buffer)
 (bind-key "C-x k" #'kill-current-buffer)
 (bind-key "C-x C-c" #'nano-kill)
 (bind-key "C-x C-r" #'recentf-open)

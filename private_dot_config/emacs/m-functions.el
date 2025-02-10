@@ -1,5 +1,9 @@
 ;;; m-functions.el --- helper functions -*- no-byte-compile: t; lexical-binding: t; -*-
 
+;;; Commentary:
+
+;;; Code:
+
 (defun prot/keyboard-quit-dwim ()
   "Do-What-I-Mean behaviour for a general `keyboard-quit'.
 
