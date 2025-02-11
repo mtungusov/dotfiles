@@ -11,6 +11,16 @@
 ;; --- Speed benchmarking -----------------------------------------------------
 (setq init-start-time (current-time))
 
+;;; --- no backups ------------------------------------------------------------
+
+(setq-default
+   auto-revert-verbose nil
+   auto-save-default nil
+   auto-save-list-file-name nil
+   backup-inhibited t
+   create-lockfiles nil
+   make-backup-files nil)
+
 ;; --- Typography stack -------------------------------------------------------
 (set-face-attribute 'default nil
                     :height 180 :weight 'light :family "Input Mono Compressed")
