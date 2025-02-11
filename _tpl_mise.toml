@@ -1,0 +1,9 @@
+[env]
+RUBY_VERSION = "3.3.7"
+GEM_HOME = "{{ config_root }}/.rubyenv"
+BUNDLE_BIN = "{{ config_root }}/.rubyenv/bin"
+
+_.path = ["{{ config_root }}/.rubyenv/bin"]
+
+[tools]
+ruby = "3.3.7"
