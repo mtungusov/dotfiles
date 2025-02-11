@@ -310,7 +310,7 @@
 
   (setq corfu-min-width 20)
   (setq corfu-preview-current nil)
- 
+
   (setq corfu-auto-delay 0.2)
   (setq corfu-popupinfo-delay '(1.25 . 0.5))
   (corfu-popupinfo-mode 1) ; shows documentation after `corfu-popupinfo-delay'
@@ -612,9 +612,14 @@
       (breadcrumb-local-mode 1))))
 
 ;; https://github.com/purcell/envrc
-(use-package envrc
+; (use-package envrc
+;   :ensure t
+;   :hook (after-init . envrc-global-mode))
+
+;; https://github.com/eki3z/mise.el
+(use-package mise
   :ensure t
-  :hook (after-init . envrc-global-mode))
+  :hook (after-init . global-mise-mode))
 
 ;; https://github.com/fgeller/highlight-thing.el
 (use-package highlight-thing
@@ -774,4 +779,3 @@
 
 (provide 'init)
 ;;; init.el ends here
-

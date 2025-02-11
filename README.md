@@ -155,8 +155,11 @@ brew install docker
 ## direnv
 https://direnv.net/
 
-```
-brew install direnv
+!!!
+! --- try not use with mise ---  !
+!!!
+```shell
+# brew install direnv
 ```
 
 ## pkg-config
@@ -201,6 +204,7 @@ mise latest java
 mise latest rust
 mise ls-remote rust
 mise use -g --pin rust@1
+mise reshim
 ```
 
 ### ruby
@@ -211,7 +215,25 @@ https://mise.jdx.dev/lang/ruby.html
 brew install openssl@3 readline libyaml gmp
 mise latest ruby
 mise use -g --pin ruby@3.3
+mise reshim
 ruby --yjit -v
+```
+
+mise.toml
+```toml
+[env]
+RUBY_VERSION = "3.3.7"
+GEM_HOME = "{{ config_root }}/.rubyenv"
+BUNDLE_BIN = "{{ config_root }}/.rubyenv/bin"
+_.path = ["{{ config_root }}/.rubyenv/bin"]
+```
+
+### node
+
+```shell
+mise latest node
+mise use -g --pin node@23.7
+mise reshim
 ```
 
 ### python
@@ -224,7 +246,7 @@ UV (https://docs.astral.sh/uv/) ?
 brew install openssl readline sqlite3 xz zlib tcl-tk
 mise latest python
 mise use -g --pin python@3.12.1
-mise resim
+mise reshim
 python -m tkinter -c "tkinter._text()"
 ```
 
