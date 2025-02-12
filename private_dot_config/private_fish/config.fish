@@ -116,4 +116,6 @@ if type -q starship
 end
 
 # Added by LM Studio CLI (lms)
-set -gx PATH $PATH /Users/misha/.lmstudio/bin
+if type -q /Users/misha/.lmstudio/bin
+    set -gx PATH $PATH /Users/misha/.lmstudio/bin
+end
