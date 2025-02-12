@@ -722,23 +722,24 @@
 
 ;;; global keys
 
-(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-z")) ;; No suspend frame
 
 (define-key global-map (kbd "C-g") #'prot/keyboard-quit-dwim)
 (define-key global-map [escape] #'prot/keyboard-quit-dwim)
 
 (define-key global-map (kbd "s-p") #'project-find-file)
 
-(define-key global-map (kbd "s-<up>") #'mt/move-line-up)
-(define-key global-map (kbd "s-<down>") #'mt/move-line-down)
-(define-key global-map (kbd "s-d") #'crux-duplicate-current-line-or-region)
-(define-key global-map (kbd "S-<return>") #'crux-smart-open-line)
+(define-key global-map (kbd "M-<up>") #'mt/move-line-up)
+(define-key global-map (kbd "M-<down>") #'mt/move-line-down)
+(define-key global-map (kbd "M-S-<down>") #'crux-duplicate-current-line-or-region)
+(define-key global-map (kbd "M-<return>") #'crux-smart-open-line)
 (define-key global-map (kbd "M-S-<return>") #'crux-smart-open-line-above)
-(define-key (current-global-map) [remap move-beginning-of-line] 'crux-move-beginning-of-line) ; C-a
-(define-key (current-global-map) [remap kill-line] 'crux-smart-kill-line) ; C-k
+(define-key (current-global-map)
+  [remap move-beginning-of-line] 'crux-move-beginning-of-line) ; C-a
+(define-key (current-global-map)
+  [remap kill-line] 'crux-smart-kill-line) ; C-k
 
-(define-key (current-global-map) [remap other-window] 'crux-other-window-or-switch-buffer) ; C-x o
-(define-key global-map (kbd "s-o") #'crux-other-window-or-switch-buffer) ; C-x o
+(define-key global-map (kbd "M-o") #'crux-other-window-or-switch-buffer)
 (define-key global-map (kbd "s-w") #'kill-current-buffer) ; s-k
 
 

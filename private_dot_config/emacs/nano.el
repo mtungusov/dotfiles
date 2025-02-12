@@ -12,7 +12,6 @@
 (setq init-start-time (current-time))
 
 ;;; --- no backups ------------------------------------------------------------
-
 (setq-default
    auto-revert-verbose nil
    auto-save-default nil
@@ -184,14 +183,9 @@
 (bind-key "RET" #'icomplete-force-complete-and-exit icomplete-minibuffer-map)
 
 ;; --- Minimal key bindings ---------------------------------------------------
-(defun nano-quit ()
-  "Quit minibuffer from anywhere (code from Protesilaos Stavrou)."
+(load (locate-user-emacs-file "m-functions.el"))
 
-  (interactive)
-  (cond ((region-active-p) (keyboard-quit))
-        ((derived-mode-p 'completion-list-mode) (delete-completion-window))
-        ((> (minibuffer-depth) 0) (abort-recursive-edit))
-        (t (keyboard-quit))))
+(editorconfig-mode 1)
 
 (defun nano-kill ()
   "Delete frame or kill emacs if there is only one frame left."
@@ -201,22 +195,27 @@
       (delete-frame)
     (error (save-buffers-kill-terminal))))
 
-(defun crux-other-window-or-switch-buffer ()
-  "Call `other-window' if more than one window is visible.
-Switch to most recent buffer otherwise."
-  (interactive)
-  (if (one-window-p)
-      (switch-to-buffer nil)
-    (other-window 1)))
+(global-unset-key (kbd "C-z")) ;; No suspend frame
 
-(bind-key "C-x o" #'crux-other-window-or-switch-buffer)
+(define-key global-map (kbd "C-g") #'prot/keyboard-quit-dwim)
+(define-key global-map [escape] #'prot/keyboard-quit-dwim)
+(define-key global-map (kbd "M-<up>") #'mt/move-line-up)
+(define-key global-map (kbd "M-<down>") #'mt/move-line-down)
+(define-key global-map (kbd "M-S-<down>") #'crux-duplicate-current-line-or-region)
+(define-key global-map (kbd "M-<return>") #'crux-smart-open-line)
+(define-key global-map (kbd "M-S-<return>") #'crux-smart-open-line-above)
+(define-key (current-global-map)
+  [remap move-beginning-of-line] 'crux-move-beginning-of-line) ; C-a
+(define-key (current-global-map)
+  [remap kill-line] 'crux-smart-kill-line) ; C-k
+(define-key (current-global-map)
+  [remap comment-dwim] 'comment-line) ; M-;
+
+(define-key global-map (kbd "M-o") #'crux-other-window-or-switch-buffer)
 (bind-key "C-x k" #'kill-current-buffer)
 (bind-key "C-x C-c" #'nano-kill)
 (bind-key "C-x C-r" #'recentf-open)
-(bind-key "C-g" #'nano-quit)
-(bind-key [escape] #'nano-quit)
 (bind-key "M-n" #'make-frame)
-(bind-key "C-z"  nil) ;; No suspend frame
 (bind-key "C-<wheel-up>" nil) ;; No text resize via mouse scroll
 (bind-key "C-<wheel-down>" nil) ;; No text resize via mouse scroll
 
@@ -267,8 +266,8 @@ Switch to most recent buffer otherwise."
 (add-hook 'minibuffer-setup-hook #'nano-minibuffer--setup)
 
 ;; --- Packages ---
-(use-package editorconfig
-  :ensure t)
+; (use-package editorconfig
+;   :ensure t)
 
 ;; --- Speed benchmarking -----------------------------------------------------
 (let ((init-time (float-time (time-subtract (current-time) init-start-time)))
