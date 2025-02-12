@@ -6,18 +6,13 @@ xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-``` shell
-brew install git
-git clone git@github.com:mtungusov/dotfiles.git ~/projects/dotfiles
-```
-
 # Dotfiles Install
 
 ## Chezmoi dotfiles manager
 https://www.chezmoi.io/
 
 ```shell
-brew install chezmoi
+brew install git chezmoi
 chezmoi init --apply $GITHUB_USERNAME
 ```
 
@@ -44,7 +39,7 @@ chezmoi init --apply $GITHUB_USERNAME
 - zellij [Zellij is a terminal workspace](https://zellij.dev/)
 
 ```
-brew install git git-delta difftastic tmux fish starship eza coreutils ripgrep xh bat fd fzf zoxide yazi vladkens/tap/macmon
+brew install git git-delta difftastic tmux fish starship eza coreutils ripgrep xh bat fd fzf zoxide yazi
 ```
 
 ## Fish
@@ -64,6 +59,12 @@ https://github.com/MonitorControl/MonitorControl
 ```
 # brew install --cask monitorcontrol
 brew install MonitorControl
+brew install vladkens/tap/macmon
+```
+
+## Menubar widget
+```
+brew install vladkens/tap/macmon
 ```
 
 # Fonts
@@ -167,7 +168,7 @@ https://direnv.net/
 Manage compile and link flags for libraries
 
 ```
-brew install pkg-config
+brew install pkg-config zlib ncurses
 ```
 
 ## MISE
@@ -207,6 +208,15 @@ mise use -g --pin rust@1
 mise reshim
 ```
 
+### go
+
+```shell
+mise latest go
+mise ls-remote go
+mise use -g --pin go@1.24
+mise reshim
+```
+
 ### ruby
 
 https://mise.jdx.dev/lang/ruby.html
@@ -243,7 +253,7 @@ https://mise.jdx.dev/lang/python.html
 UV (https://docs.astral.sh/uv/) ?
 
 ```shell
-brew install openssl readline sqlite3 xz zlib tcl-tk
+brew install readline sqlite3 xz zlib tcl-tk
 mise latest python
 mise use -g --pin python@3.12.1
 mise reshim
@@ -259,7 +269,6 @@ mise latest java@temurin-21
 mise use -g --pin java@temurin-21.0.6+7.0.LTS
 mise reshim
 ```
-
 
 ### clojure
 
