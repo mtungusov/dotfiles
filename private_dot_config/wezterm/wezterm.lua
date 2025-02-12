@@ -16,7 +16,10 @@ end
 -- config.color_scheme = 'DoomOne'
 -- config.color_scheme = 'Snazzy'
 -- config.color_scheme = 'Catppuccin Mocha'
-config.color_scheme = 'Ef-Autumn'
+-- config.color_scheme = 'Ef-Autumn'
+-- config.color_scheme = 'Material (base16)'
+-- config.color_scheme = 'MaterialOcean'
+config.color_scheme = 'OneDark (base16)'
 
 config.font = wezterm.font 'Input Mono Compressed'
 config.font_size = 18.0
