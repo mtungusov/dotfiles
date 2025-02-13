@@ -81,7 +81,7 @@
 (when (member "Input Mono Compressed" (font-family-list))
   (set-face-attribute 'default nil :family "Input Mono Compressed" :height 180 :weight 'light)
   (set-face-attribute 'fixed-pitch nil :family "Input Mono Compressed" :height 1.0)
-  (set-face-attribute 'bold nil :weight 'medium))
+  (set-face-attribute 'bold nil :weight 'regular))
 (when (member "Input Serif Compressed" (font-family-list))
   (set-face-attribute 'variable-pitch nil :family "Input Serif Compressed" :height 1.0))
 (when (member  "Symbola" (font-family-list))
@@ -541,7 +541,7 @@
             (project-vc-dir "VC-Dir")
             (project-shell "Shell")
             (keyboard-quit "Quit")))
-  (setq project-vc-extra-root-markers '(".project" "deps.edn" "config.ru")) ; Emacs 29
+  (setq project-vc-extra-root-markers '(".project" "deps.edn" "config.ru" "go.mod")) ; Emacs 29
   (setq project-key-prompt-style t) ; Emacs 30
 
   (advice-add #'project-switch-project :after #'prot-common-clear-minibuffer-message))
@@ -723,6 +723,7 @@
 ;;; global keys
 
 (global-unset-key (kbd "C-z")) ;; No suspend frame
+(global-unset-key (kbd "s-o")) ;; No open file frame
 
 (define-key global-map (kbd "C-g") #'prot/keyboard-quit-dwim)
 (define-key global-map [escape] #'prot/keyboard-quit-dwim)

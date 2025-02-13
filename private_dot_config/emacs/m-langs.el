@@ -59,11 +59,9 @@
   :ensure nil
   :mode (("\\.cmake\\'" . cmake-ts-mode)
          ("\\.css\\'" . css-ts-mode)
-         ("\\.go\\'" . go-ts-mode)
          ("\\.java\\'" . java-ts-mode)
 	 ("\\.json\\'" . json-ts-mode)
          ("\\.py\\'" . python-ts-mode)
-         ("\\.rb\\'" . ruby-ts-mode)
          ("\\.js\\'" . typescript-ts-mode)
          ("\\.mjs\\'" . typescript-ts-mode)
          ("\\.mts\\'" . typescript-ts-mode)
@@ -106,6 +104,25 @@
 (use-package dockerfile-mode
   :ensure t
   :mode "Dockerfile\\'")
+
+;;;; go-mode
+(use-package go-mode
+  :ensure t
+  :mode "\\.go\\'"
+  :init
+  (defun eglot-format-buffer-before-save ()
+    (add-hook 'before-save-hook #'eglot-format-buffer -10 t))
+  :hook
+  (go-mode . eglot-ensure)
+  (go-mode . eglot-format-buffer-before-save)
+  :config
+  (add-hook 'before-save-hook
+	    (lambda ()
+              (call-interactively 'eglot-code-action-organize-imports))
+	    nil t))
+
+(use-package go-ts-mode
+  :hook (go-mode . go-ts-mode))
 
 ;;;; markdown-mode
 (use-package markdown-mode
