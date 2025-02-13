@@ -779,5 +779,14 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (load custom-file :no-error-if-file-is-missing)
 
+;; --- Speed benchmarking -----------------------------------------------------
+(let ((init-time (float-time (time-subtract (current-time) init-start-time)))
+      (total-time (string-to-number (emacs-init-time "%f"))))
+  (message (concat
+    (propertize "Startup time: " 'face 'bold)
+    (format "%.2fs " init-time)
+    (propertize (format "(+ %.2fs system time)"
+                        (- total-time init-time)) 'face 'shadow))))
+
 (provide 'init)
 ;;; init.el ends here

@@ -3,6 +3,9 @@
 ;;; Commentary:
 ;;; Code:
 
+;; --- Speed benchmarking -----------------------------------------------------
+(setq init-start-time (current-time))
+
 (setq gc-cons-threshold (* 1000 1000 8)
       gc-cons-percentage 0.1)
 
