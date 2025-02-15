@@ -1,21 +1,6 @@
 // Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "language_models": {
-    "openai": {
-      "version": "1",
-      "api_url": "http://127.0.0.1:1234"
-    }
-  },
+  // --- LLM Start ---
   "assistant": {
     "default_model": {
       "provider": "lmstudio",
@@ -23,25 +8,36 @@
     },
     "version": "2"
   },
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
+  "features": {
+    "edit_prediction_provider": "zed"
   },
+  "language_models": {
+    "openai": {
+      "version": "1",
+      "api_url": "http://localhost:1234"
+    },
+    "lmstudio": {
+      "api_url": "http://localhost:1234/api/v0"
+    }
+  },
+  // --- LLM End ---
   "buffer_font_family": "Input Mono Compressed",
   "buffer_font_fallbacks": ["Zed Plex Mono"],
-  "ui_font_size": 16,
   "buffer_font_size": 18,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
-  },
   "git": {
     "inline_blame": {
       "enabled": false
     }
   },
+  "indent_guides": {
+    "enabled": false
+  },
   "languages": {
+    "Python": {
+      "indent_guides": {
+        "enabled": true
+      }
+    },
     "Ruby": {
       "language_servers": ["ruby-lsp", "!solargraph", "!rubocop", "..."]
     }
@@ -55,5 +51,26 @@
         }
       }
     }
-  }
+  },
+  "soft_wrap": "bounded",
+  "tabs": {
+    "git_status": false
+  },
+  "terminal": {
+    "font_size": 14,
+    "line_height": "standard",
+    "toolbar": {
+      "breadcrumbs": false
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "ui_font_size": 16
 }
