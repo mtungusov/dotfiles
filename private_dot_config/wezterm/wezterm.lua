@@ -19,16 +19,31 @@ end
 -- config.color_scheme = 'Ef-Autumn'
 -- config.color_scheme = 'Material (base16)'
 -- config.color_scheme = 'MaterialOcean'
-config.color_scheme = 'OneDark (base16)'
+-- config.color_scheme = 'OneDark (base16)'
+config.color_scheme = 'nord'
 
-config.font = wezterm.font 'Input Mono Compressed'
+-- config.font = wezterm.font 'Input Mono Compressed'
+config.font = wezterm.font('Input Mono Compressed', { weight = 'Light', stretch = "ExtraCondensed" })
 config.font_size = 18.0
+
+-- don't like bold fonts: change Bold -> Regular
+config.font_rules = {
+    {
+        intensity = 'Bold',
+        italic = false,
+        font = wezterm.font {
+            family = 'Input Mono Compressed',
+            weight = 'Regular',
+            stretch = "ExtraCondensed",
+        },
+    },
+}
 
 -- Tabs Style
 config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
-   font = wezterm.font { family = 'Input', weight = 'Bold' },
-   font_size = 12.0,
+    font = wezterm.font { family = 'Input', weight = 'Bold' },
+    font_size = 12.0,
 }
 
 config.use_dead_keys = false
