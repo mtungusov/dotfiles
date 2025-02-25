@@ -20,6 +20,7 @@ end
 -- config.color_scheme = 'Material (base16)'
 -- config.color_scheme = 'MaterialOcean'
 -- config.color_scheme = 'OneDark (base16)'
+-- config.color_scheme = 'Poimandres'
 config.color_scheme = 'nord'
 
 -- config.font = wezterm.font 'Input Mono Compressed'
