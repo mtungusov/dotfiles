@@ -217,6 +217,18 @@ mise use -g --pin go@1.24
 mise reshim
 ```
 
+#### linter
+```shell
+curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install.sh | sh -s -- -b $(go env GOROOT)/bin v1.64.5
+
+golangci-lint --version
+
+https://github.com/nametake/golangci-lint-langserver/releases/download/v0.0.10/golangci-lint-langserver_Darwin_arm64.tar.gz
+sudo xattr -dr com.apple.quarantine /Users/misha/.local/share/mise/installs/go/1.24.0/bin/golangci-lint-langserver
+
+https://github.com/joakimen/zed_golangci_lint
+```
+
 ### ruby
 
 https://mise.jdx.dev/lang/ruby.html

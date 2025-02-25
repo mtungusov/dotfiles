@@ -33,6 +33,9 @@
     "enabled": false
   },
   "languages": {
+    "Go": {
+      "language_servers": ["gopls", "golangci-lint"]
+    },
     "Python": {
       "indent_guides": {
         "enabled": true
@@ -43,6 +46,17 @@
     }
   },
   "lsp": {
+    "golangci-lint": {
+      "initialization_options": {
+        "command": [
+          "golangci-lint",
+          "run",
+          "--out-format",
+          "json",
+          "--issues-exit-code=1"
+        ]
+      }
+    },
     "ruby-lsp": {
       "initialization_options": {
         "enabledFeatures": {
