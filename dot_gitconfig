@@ -33,11 +33,14 @@ difftool = true
 
 [alias]
 a  = add
-b = branch -a
+b  = branch -a
 c  = commit
 co = checkout
 d  = diff
+dr = show --ext-diff
+ds = diff --staged
 l  = log --pretty=oneline --abbrev-commit
+ld = log -p --ext-diff
 ll = log --pretty=format:'%C(yellow)d%h%Creset %C(bold red)%d%Creset %C(green)%ad%Creset | %s [%C(bold cyan)%an%Creset]' --date=short --graph
 r  = remote -v
 st = status
