@@ -1,3 +1,4 @@
 README.*
 .DS_Store
-_tpl_*.*
+**/_tpl.el
+**/_tpl_*.toml
