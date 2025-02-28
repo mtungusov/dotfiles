@@ -52,7 +52,6 @@ set -gx EDITOR "vi"
 
 if type -q emacs
    alias e "emacs -Q -nw -l '~/.config/emacs/nano.el'"
-   set -gx EDITOR "e"
 end
 
 if status is-interactive
