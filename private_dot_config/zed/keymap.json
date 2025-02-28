@@ -15,7 +15,9 @@
   {
     "context": "Editor",
     "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "ctrl-=": "editor::SelectLargerSyntaxNode", // Expand Selection
+      "ctrl-k": "editor::DeleteToEndOfLine",
+      "ctrl-shift-k": "editor::DeleteLine",
       "alt-;": ["editor::ToggleComments", { "advance_downwards": false }]
     }
   }

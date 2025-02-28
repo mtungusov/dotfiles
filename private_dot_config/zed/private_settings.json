@@ -8,9 +8,6 @@
     },
     "version": "2"
   },
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
   "language_models": {
     "openai": {
       "version": "1",
@@ -21,6 +18,17 @@
     }
   },
   // --- LLM End ---
+  // ---------------
+  // --- Edit Prediction Start ---
+  "edit_predictions": {
+    "mode": "auto"
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "show_edit_predictions": true,
+  // --- Edit Prediction End ---
+  // ---------------------------
   "buffer_font_family": "Input Mono Compressed",
   "buffer_font_fallbacks": ["Zed Plex Mono"],
   "buffer_font_size": 18,
@@ -67,6 +75,7 @@
     }
   },
   "soft_wrap": "bounded",
+  "preferred_line_length": 100,
   "tabs": {
     "git_status": false
   },
