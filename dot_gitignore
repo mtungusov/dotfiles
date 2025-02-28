@@ -30,7 +30,6 @@ venv
 .lsp
 .nrepl-port
 .osidian
-*.pid
 .project
 .rake_tasks
 .rebel_*
@@ -72,6 +71,7 @@ gradlew*
 package-lock.json
 *.pyc
 *.lock
+*.pid
 
 # Sensitive info
 secrets.e*
