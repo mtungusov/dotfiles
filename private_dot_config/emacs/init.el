@@ -347,7 +347,7 @@
    ("M-s l" . (lambda () (interactive) (consult-line (thing-at-point 'symbol))))
    ("M-s r" . consult-ripgrep)
    ([remap switch-to-buffer] . consult-buffer) ; C-x b
-   ("s-e" . consult-recent-file)
+   ("C-x C-r" . consult-recent-file)
    :map isearch-mode-map
    ("M-e" . consult-isearch-history)
    :map minibuffer-local-map

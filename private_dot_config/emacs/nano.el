@@ -265,10 +265,6 @@
   (setq truncate-lines t))
 (add-hook 'minibuffer-setup-hook #'nano-minibuffer--setup)
 
-;; --- Packages ---
-; (use-package editorconfig
-;   :ensure t)
-
 ;; --- Speed benchmarking -----------------------------------------------------
 (let ((init-time (float-time (time-subtract (current-time) init-start-time)))
       (total-time (string-to-number (emacs-init-time "%f"))))
