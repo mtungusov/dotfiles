@@ -1,0 +1,8 @@
+[env]
+GOOS = "darwin"
+GOARCH = "arm64"
+# GOPATH="{{ config_root }}/go"
+# _.path = ["{{ config_root }}/go/bin"]
+
+[tools]
+go = "1.24.0"
