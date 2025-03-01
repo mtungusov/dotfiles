@@ -100,9 +100,10 @@ https://github.com/d12frosted/homebrew-emacs-plus
 ```shell
 brew install autoconf automake bzip2 cmake dark-mode gcc git giflib gnutls jansson jpeg libgccjit libtiff libvterm libxml2 pkg-config texinfo
 
-brew install emacs-plus@30 --with-xwidgets --with-imagemagick --with-native-comp --with-modern-orange-icon
+# emacs 30.1 --with-native-comp -- now by default
+brew install emacs-plus@30 --with-xwidgets --with-imagemagick --with-modern-orange-icon
 
-osascript -e 'tell application "Finder" to make alias file to posix file "/opt/homebrew/opt/emacs-plus@30/Emacs.app" at posix file "/Applications" with properties {name:"Emacs.app"}'
+# run osascript to add Emacs.app into /Application folder
 ```
 
 # Apps
@@ -223,9 +224,12 @@ curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install
 
 golangci-lint --version
 
-https://github.com/nametake/golangci-lint-langserver/releases/download/v0.0.10/golangci-lint-langserver_Darwin_arm64.tar.gz
+## install LSP server for linter from url
+## https://github.com/nametake/golangci-lint-langserver/releases/download/v0.0.10/golangci-lint-langserver_Darwin_arm64.tar.gz
+## enable run on OSX
 sudo xattr -dr com.apple.quarantine /Users/misha/.local/share/mise/installs/go/1.24.0/bin/golangci-lint-langserver
 
+## install Zed extension
 https://github.com/joakimen/zed_golangci_lint
 ```
 
