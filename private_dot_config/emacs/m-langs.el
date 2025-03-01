@@ -30,7 +30,7 @@
                (cmake "https://github.com/uyha/tree-sitter-cmake")
 	       (css . ("https://github.com/tree-sitter/tree-sitter-css" "v0.20.0"))
                (elisp "https://github.com/Wilfred/tree-sitter-elisp")
-               (go "https://github.com/tree-sitter/tree-sitter-go" "v0.20.0")
+               (go "https://github.com/tree-sitter/tree-sitter-go" "v0.23.4")
                (html . ("https://github.com/tree-sitter/tree-sitter-html" "v0.20.1"))
                (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.21.2" "src"))
                (java . ("https://github.com/tree-sitter/tree-sitter-java"))

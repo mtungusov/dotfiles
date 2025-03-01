@@ -18,7 +18,7 @@
     }
   },
   // --- LLM End ---
-  // ---------------
+  // ---
   // --- Edit Prediction Start ---
   "edit_predictions": {
     "mode": "auto"
@@ -28,18 +28,8 @@
   },
   "show_edit_predictions": true,
   // --- Edit Prediction End ---
-  // ---------------------------
-  "buffer_font_family": "Input Mono Compressed",
-  "buffer_font_fallbacks": ["Zed Plex Mono"],
-  "buffer_font_size": 18,
-  "git": {
-    "inline_blame": {
-      "enabled": false
-    }
-  },
-  "indent_guides": {
-    "enabled": false
-  },
+  // ---
+  // --- Langs and LSP ---
   "languages": {
     "Go": {
       "language_servers": ["gopls", "golangci-lint"]
@@ -56,26 +46,34 @@
   "lsp": {
     "golangci-lint": {
       "initialization_options": {
-        "command": [
-          "golangci-lint",
-          "run",
-          "--out-format",
-          "json",
-          "--issues-exit-code=1"
-        ]
+        "command": ["golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1"]
       }
     },
     "ruby-lsp": {
       "initialization_options": {
         "enabledFeatures": {
-          // This disables diagnostics
-          "diagnostics": false
+          "diagnostics": false,
+          "onTypeFormatting": false
         }
       }
     }
   },
-  "soft_wrap": "bounded",
+  // --- Langs and LSP End ---
+  // ---
+  "buffer_font_family": "Input Mono Compressed",
+  "buffer_font_fallbacks": ["Zed Plex Mono"],
+  "buffer_font_size": 18,
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "indent_guides": {
+    "enabled": false
+  },
   "preferred_line_length": 100,
+  "restore_on_startup": "none",
+  "soft_wrap": "bounded",
   "tabs": {
     "git_status": false
   },
@@ -92,8 +90,8 @@
   },
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "light": "Ezio Light",
+    "dark": "New Darcula"
   },
   "ui_font_size": 16
 }
