@@ -408,7 +408,10 @@
 
 ;;; Neotree
 
-(use-package find-file-in-project :ensure t)
+(use-package find-file-in-project
+  :ensure t
+  :config
+    (setq ffip-use-rust-fd t))
 
 (use-package neotree
   :ensure t
@@ -741,7 +744,9 @@
   [remap kill-line] 'crux-smart-kill-line) ; C-k
 
 (define-key global-map (kbd "M-o") #'crux-other-window-or-switch-buffer)
+
 (global-unset-key (kbd "s-k")) ; s-k -> bind to "clear terminal"
+(define-key global-map (kbd "C-x C-k") #'kill-current-buffer) ; "C-x k" -> kill-buffer
 (define-key global-map (kbd "s-w") #'kill-current-buffer)
 
 ;;; display-buffer-alist
