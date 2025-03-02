@@ -27,8 +27,8 @@
 
 (when (featurep 'native-compile)
   (setq native-comp-async-report-warnings-errors nil
-	native-compile-prune-cache t
-	native-comp-jit-compilation t))
+    native-compile-prune-cache t
+    native-comp-jit-compilation t))
 
 ;;; no backups
 
@@ -167,8 +167,8 @@
   :ensure t
   :config
   (setq modus-vivendi-palette-overrides
-	'((bg-main "#171717")
-	  (comment yellow-faint))))
+    '((bg-main "#171717")
+      (comment yellow-faint))))
 
 (use-package ef-themes
   :ensure t
@@ -186,9 +186,9 @@
   ;; (setq ef-themes-variable-pitch-ui nil)
   ;; Theme overrides
   (setq ef-autumn-palette-overrides
-	'((cursor magenta-cooler)))
+    '((cursor magenta-cooler)))
   (setq ef-owl-palette-overrides
-	'((comment yellow-faint))))
+    '((comment yellow-faint))))
 
 (load-theme 'ef-owl :no-confirm-loading)
 
@@ -295,15 +295,15 @@
   :hook (after-init . global-corfu-mode)
   :bind
   (:map corfu-map
-	("<tab>" . corfu-complete)
-	([remap completion-at-point] . corfu-complete)
-	("SPC" . corfu-insert-separator)
-	("C-j" . corfu-next)
-	("C-k" . corfu-previous)
-	:map corfu-popupinfo-map
-	("M-j" . corfu-popupinfo-scroll-down)
-	("M-k" . corfu-popupinfo-scroll-up)
-	("M-h" . corfu-popupinfo-toggle))
+    ("<tab>" . corfu-complete)
+    ([remap completion-at-point] . corfu-complete)
+    ("SPC" . corfu-insert-separator)
+    ("C-j" . corfu-next)
+    ("C-k" . corfu-previous)
+    :map corfu-popupinfo-map
+    ("M-j" . corfu-popupinfo-scroll-down)
+    ("M-k" . corfu-popupinfo-scroll-up)
+    ("M-h" . corfu-popupinfo-toggle))
   :init
   :config
   (setq tab-always-indent 'complete)
@@ -359,7 +359,7 @@
         register-preview-function #'consult-register-format)
   (advice-add #'register-preview :override #'consult-register-window)
   (setq xref-show-xrefs-function #'consult-xref
-	xref-show-definitions-function #'consult-xref)
+    xref-show-definitions-function #'consult-xref)
   :config
   (setq consult-line-numbers-widen t)
   (setq consult-async-min-input 3)
@@ -446,12 +446,12 @@
         isearch-lax-whitespace t
         isearch-regexp-lax-whitespace nil)
   (setq search-highlight t
-	isearch-lazy-highlight t
-	lazy-highlight-initial-delay 0.5
-	lazy-highlight-no-delay-length 4)
+    isearch-lazy-highlight t
+    lazy-highlight-initial-delay 0.5
+    lazy-highlight-no-delay-length 4)
   (setq isearch-lazy-count t
-	lazy-count-prefix-format "(%s/%s) "
-	lazy-count-suffix-format nil))
+    lazy-count-prefix-format "(%s/%s) "
+    lazy-count-suffix-format nil))
 
 (use-package rg
   :ensure t
@@ -502,26 +502,26 @@
   :ensure t
   :defer t
   :bind (("<escape>" . mc/keyboard-quit)
-	 ("C->"      . mc/mark-next-like-this)
-	 ("C-M->"    . mc/skip-to-next-like-this)
-	 ("C-<"      . mc/mark-previous-like-this)
-	 ("C-M-<"    . mc/skip-to-previous-like-this)
-	 ("s->"      . mc/edit-lines)
-	 ("s-<mouse-1>" . mc/add-cursor-on-click)))
+    ("C->"      . mc/mark-next-like-this)
+    ("C-M->"    . mc/skip-to-next-like-this)
+    ("C-<"      . mc/mark-previous-like-this)
+    ("C-M-<"    . mc/skip-to-previous-like-this)
+    ("s->"      . mc/edit-lines)
+    ("s-<mouse-1>" . mc/add-cursor-on-click)))
 
 (use-package puni
   :ensure t
   :bind
   (:map puni-mode-map
-	("M-]" . puni-slurp-forward)
-	("M-}" . puni-barf-forward)
-	("M-[" . puni-slurp-backward)
-	("M-{" . puni-barf-backward)))
+    ("M-]" . puni-slurp-forward)
+    ("M-}" . puni-barf-forward)
+    ("M-[" . puni-slurp-backward)
+    ("M-{" . puni-barf-backward)))
 
 (use-package undo-fu
   :ensure t
   :bind (("C-/" . undo-fu-only-undo)
-	 ("C-?" . undo-fu-only-redo)))
+    ("C-?" . undo-fu-only-redo)))
 
 ;;; Project
 
@@ -565,8 +565,8 @@
 (use-package prog-mode
   :ensure nil
   :hook ((prog-mode . display-line-numbers-mode)
-	 (prog-mode . electric-indent-mode)
-	 (prog-mode . electric-pair-mode)))
+    (prog-mode . electric-indent-mode)
+    (prog-mode . electric-pair-mode)))
 
 ;;;; Eldoc (Emacs live documentation feedback)
 (use-package eldoc
@@ -696,19 +696,19 @@
 (use-package eglot
   :ensure nil
   :bind (("C-h ." . display-local-help)
-	 :map eglot-mode-map
-	 ("C-c l a" . eglot-code-actions)
-	 ("C-c l f" . eglot-format)))
+    :map eglot-mode-map
+    ("C-c l a" . eglot-code-actions)
+    ("C-c l f" . eglot-format)))
 
 (use-package treesit
   :ensure nil
   :bind (("C-c t b" . treesit-beginning-of-defun)
-	 ("C-c t e" . treesit-end-of-defun)))
+    ("C-c t e" . treesit-end-of-defun)))
 
 (use-package inf-ruby
   :ensure nil
   :bind (:map inf-ruby-minor-mode-map
-	      ("C-c r c" . inf-ruby-console-auto)))
+    ("C-c r c" . inf-ruby-console-auto)))
 
 (use-package apheleia
   :ensure t
@@ -741,8 +741,8 @@
   [remap kill-line] 'crux-smart-kill-line) ; C-k
 
 (define-key global-map (kbd "M-o") #'crux-other-window-or-switch-buffer)
-(define-key global-map (kbd "s-w") #'kill-current-buffer) ; s-k
-
+(global-unset-key (kbd "s-k")) ; s-k -> bind to "clear terminal"
+(define-key global-map (kbd "s-w") #'kill-current-buffer)
 
 ;;; display-buffer-alist
 
@@ -754,25 +754,25 @@
                (allow-no-window . t)))
 
 ;; (add-to-list 'display-buffer-alist
-;; 	     '("\\*[Cc]ompilation\\|\\*Rubo[Cc]op"
-;; 	       (display-buffer-no-window)
-;; 	       (allow-no-window . t)))
+;;      '("\\*[Cc]ompilation\\|\\*Rubo[Cc]op"
+;;        (display-buffer-no-window)
+;;        (allow-no-window . t)))
 
 (add-to-list 'display-buffer-alist
-	     '("\\*vterm\\*"
-	       (display-buffer-reuse-window display-buffer-at-bottom)
-	       (dedicated . t)
-	       (reusable-frames . visible)
-	       (slot . -1)
-	       (window-height . 0.3)))
+  '("\\*vterm\\*"
+    (display-buffer-reuse-window display-buffer-at-bottom)
+    (dedicated . t)
+    (reusable-frames . visible)
+    (slot . -1)
+    (window-height . 0.3)))
 
 (add-to-list 'display-buffer-alist
-	     '("\\*pry\\*"
-	       (display-buffer-reuse-window display-buffer-at-bottom)
-	       (dedicated . t)
-	       (reusable-frames . visible)
-	       (slot . -1)
-	       (window-height . 0.3)))
+  '("\\*pry\\*"
+    (display-buffer-reuse-window display-buffer-at-bottom)
+    (dedicated . t)
+    (reusable-frames . visible)
+    (slot . -1)
+    (window-height . 0.3)))
 
 ;;; custom.el
 

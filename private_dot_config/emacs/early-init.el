@@ -36,8 +36,8 @@
 (setq package-enable-at-startup t)
 
 (setq-default default-frame-alist
-	      (append (list '(fullscreen . fullheight)
-			    '(width . 150))))
+  (append (list '(fullscreen . fullheight)
+    '(width . 150))))
 
 (provide 'early-init)
 ;;; early-init.el ends here

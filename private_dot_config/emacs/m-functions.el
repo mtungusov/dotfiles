@@ -207,8 +207,8 @@ Switch to most recent buffer otherwise."
   (let ((languages (mapcar 'car treesit-language-source-alist)))
     (when (member lang languages)
       (unless (treesit-language-available-p lang)
-	(treesit-install-language-grammar lang)
-	(message "`%s' parser was installed." lang)))))
+        (treesit-install-language-grammar lang)
+        (message "`%s' parser was installed." lang)))))
 
 (defun mt/treesit-install-all-languages ()
   "Install all languages specified by `treesit-language-source-alist'."
@@ -216,9 +216,9 @@ Switch to most recent buffer otherwise."
   (let ((languages (mapcar 'car treesit-language-source-alist)))
     (dolist (lang languages)
       (unless (treesit-language-available-p lang)
-	(treesit-install-language-grammar lang)
-	(message "`%s' parser was installed." lang)
-	(sit-for 0.75)))))
+        (treesit-install-language-grammar lang)
+        (message "`%s' parser was installed." lang)
+        (sit-for 0.75)))))
 
 (provide 'm-functions)
 ;;; m-functions.el ends here

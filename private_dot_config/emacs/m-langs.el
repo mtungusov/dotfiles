@@ -26,9 +26,9 @@
     (interactive)
     (dolist (grammar
              '((bash "https://github.com/tree-sitter/tree-sitter-bash")
-	       (c "https://github.com/tree-sitter/tree-sitter-c")
+               (c "https://github.com/tree-sitter/tree-sitter-c")
                (cmake "https://github.com/uyha/tree-sitter-cmake")
-	       (css . ("https://github.com/tree-sitter/tree-sitter-css" "v0.20.0"))
+               (css . ("https://github.com/tree-sitter/tree-sitter-css" "v0.20.0"))
                (elisp "https://github.com/Wilfred/tree-sitter-elisp")
                (go "https://github.com/tree-sitter/tree-sitter-go" "v0.23.4")
                (html . ("https://github.com/tree-sitter/tree-sitter-html" "v0.20.1"))
@@ -39,7 +39,7 @@
                (markdown "https://github.com/ikatyang/tree-sitter-markdown")
                (make "https://github.com/alemuller/tree-sitter-make")
                (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.20.4"))
-	       (ruby . ("https://github.com/tree-sitter/tree-sitter-ruby"))
+               (ruby . ("https://github.com/tree-sitter/tree-sitter-ruby"))
                (toml "https://github.com/tree-sitter/tree-sitter-toml")
                (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "tsx/src"))
                (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "typescript/src"))
@@ -50,8 +50,8 @@
       ;; this obviously prevents that from happening.
       (unless (treesit-language-available-p (car grammar))
         (treesit-install-language-grammar (car grammar))
-	(message "`%s' parser was installed." (car grammar))
-	(sit-for 0.75))))
+        (message "`%s' parser was installed." (car grammar))
+        (sit-for 0.75))))
   :config
   (mt/setup-install-grammars))
 
@@ -60,7 +60,7 @@
   :mode (("\\.cmake\\'" . cmake-ts-mode)
          ("\\.css\\'" . css-ts-mode)
          ("\\.java\\'" . java-ts-mode)
-	 ("\\.json\\'" . json-ts-mode)
+         ("\\.json\\'" . json-ts-mode)
          ("\\.py\\'" . python-ts-mode)
          ("\\.js\\'" . typescript-ts-mode)
          ("\\.mjs\\'" . typescript-ts-mode)
@@ -86,12 +86,12 @@
              (js2-mode . typescript-ts-mode)
              (json-mode . json-ts-mode)
              (js-json-mode . json-ts-mode)
-	     (python-mode . python-ts-mode)
-	     (ruby-mode . ruby-ts-mode)
+             (python-mode . python-ts-mode)
+             (ruby-mode . ruby-ts-mode)
              (sh-mode . bash-ts-mode)
              (sh-base-mode . bash-ts-mode)
-	     (typescript-mode . typescript-ts-mode)
-	     (yaml-mode . yaml-ts-mode)))
+             (typescript-mode . typescript-ts-mode)
+             (yaml-mode . yaml-ts-mode)))
     (add-to-list 'major-mode-remap-alist mapping)))
 
 ;;; Langs
@@ -108,7 +108,9 @@
 ;;;; go-mode
 (use-package go-mode
   :ensure t
-  :mode "\\.go\\'"
+  :mode
+  "\\.go\\'"
+  "/go\\.mod\\'"
   :init
   (defun eglot-format-buffer-before-save ()
     (add-hook 'before-save-hook #'eglot-format-buffer -10 t))
@@ -117,9 +119,9 @@
   (go-mode . eglot-format-buffer-before-save)
   :config
   (add-hook 'before-save-hook
-	    (lambda ()
-              (call-interactively 'eglot-code-action-organize-imports))
-	    nil t))
+    (lambda ()
+      (call-interactively 'eglot-code-action-organize-imports))
+    nil t))
 
 (use-package go-ts-mode
   :hook (go-mode . go-ts-mode))
@@ -143,11 +145,11 @@
   :mode "Gemfile\\'"
   :hook
   (ruby-ts-mode . (lambda ()
-		    (eglot-ensure)
-		    (subword-mode 1)))
+    (eglot-ensure)
+    (subword-mode 1)))
   :config
   (add-to-list 'eglot-server-programs
-	       '((ruby-mode ruby-ts-mode) "ruby-lsp")))
+    '((ruby-mode ruby-ts-mode) "ruby-lsp")))
 
 ;; https://github.com/nonsequitur/inf-ruby
 (use-package inf-ruby
