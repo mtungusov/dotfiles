@@ -12,12 +12,19 @@ indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[Dockerfile]
-indent_size = 4
-
 [*.{c,cc,cpp,cs,csx,h,hpp,hh,rs}]
 indent_size = 4
 indent_style = space
+
+[*.{css,sccs,sass,htm,html,js,jsm,ts,tsx,vue}]
+indent_size = 2
+indent_style = space
+
+[*.el]
+indent_style = space
+
+[Dockerfile]
+indent_size = 4
 
 [{go.mod,go.sum,*.go}]
 indent_size = 4
@@ -27,10 +34,6 @@ indent_style = tab
 indent_size = 2
 indent_style = space
 insert_final_newline = false
-
-[*.{css,sccs,sass,htm,html,js,jsm,ts,tsx,vue}]
-indent_size = 2
-indent_style = space
 
 # Minified JavaScript files shouldn't be changed
 [**.min.js]
