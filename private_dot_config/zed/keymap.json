@@ -9,6 +9,7 @@
   {
     "context": "Workspace",
     "bindings": {
+      "alt-x": "command_palette::Toggle"
       // "shift shift": "file_finder::Toggle"
     }
   },
