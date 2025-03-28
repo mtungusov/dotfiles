@@ -21,7 +21,7 @@
   // ---
   // --- Edit Prediction Start ---
   "edit_predictions": {
-    "mode": "auto"
+    "mode": "subtle"
   },
   "features": {
     "edit_prediction_provider": "zed"
