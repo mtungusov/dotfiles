@@ -30,8 +30,10 @@
   // --- Edit Prediction End ---
   // ---
   // --- Langs and LSP ---
+  "inlay_hints": { "enabled": true },
   "languages": {
     "Go": {
+      "format_on_save": "on",
       "language_servers": ["gopls", "golangci-lint"]
     },
     "Python": {
@@ -60,11 +62,25 @@
   },
   // --- Langs and LSP End ---
   // ---
-  "buffer_font_family": "Input Mono Compressed",
+  "buffer_font_family": "Victor Mono",
   "buffer_font_fallbacks": ["Zed Plex Mono"],
   "buffer_font_size": 18,
-  // "buffer_line_height": "comfortable",
-  "buffer_line_height": "standard",
+  "buffer_font_weight": 400,
+  "buffer_line_height": "comfortable",
+  // "buffer_line_height": "standard",
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.venv",
+    "**/node_modules",
+    "**/dist",
+    "**/build",
+    "**/target",
+    "**/.rope*",
+    "**/*_cache",
+    "**/__pycache__",
+    "**/.*-version",
+    "**/.DS_Store"
+  ],
   "git": {
     "inline_blame": {
       "enabled": false
@@ -73,13 +89,15 @@
   "indent_guides": {
     "enabled": false
   },
-  "preferred_line_length": 100,
+  "preferred_line_length": 140,
   "restore_on_startup": "none",
+  "scrollbar": { "show": "auto" },
   "soft_wrap": "bounded",
   "tabs": {
     "git_status": false
   },
   "terminal": {
+    "dock": "right",
     "font_size": 14,
     "line_height": "standard",
     "toolbar": {
@@ -91,9 +109,11 @@
     "metrics": false
   },
   "theme": {
-    "mode": "system",
-    "light": "Ezio Light",
-    "dark": "New Darcula"
+    "mode": "dark",
+    // "light": "Ezio Light",
+    "light": "flat᛫light",
+    "dark": "VSCode Dark Modern"
   },
-  "ui_font_size": 16
+  "ui_font_family": "Zed Plex Sans",
+  "ui_font_size": 14
 }
