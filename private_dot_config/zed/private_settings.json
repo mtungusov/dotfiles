@@ -62,12 +62,6 @@
   },
   // --- Langs and LSP End ---
   // ---
-  "buffer_font_family": "Victor Mono",
-  "buffer_font_fallbacks": ["Zed Plex Mono"],
-  "buffer_font_size": 18,
-  "buffer_font_weight": 400,
-  "buffer_line_height": "comfortable",
-  // "buffer_line_height": "standard",
   "file_scan_exclusions": [
     "**/.git",
     "**/.venv",
@@ -108,12 +102,30 @@
     "diagnostics": false,
     "metrics": false
   },
+  // UI: font, theme
+  "buffer_font_family": "Victor Mono",
+  "buffer_font_fallbacks": ["Zed Plex Mono"],
+  "buffer_font_size": 17,
+  // "buffer_font_weight": 400,
+  "buffer_line_height": "comfortable",
+  // "buffer_line_height": "standard",
+  "ui_font_family": "Zed Plex Sans",
+  "ui_font_size": 14,
+  // Theme
   "theme": {
-    "mode": "dark",
-    // "light": "Ezio Light",
-    "light": "flat᛫light",
+    "mode": "light",
+    // "light": "Modus Operandi Tinted",
+    "light": "GitHub Light Monochrome",
+    // "dark": "VSCode Dark Modern",
     "dark": "VSCode Dark Modern"
   },
-  "ui_font_family": "Zed Plex Sans",
-  "ui_font_size": 14
+  "experimental.theme_overrides": {
+    // "editor.background": "#f8faf8",
+    "syntax": {
+      "comment": {
+        // "font_weight": 300,
+        "font_style": "normal"
+      }
+    }
+  }
 }
