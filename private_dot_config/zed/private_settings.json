@@ -1,7 +1,7 @@
 // Zed settings
 {
   // --- LLM Start ---
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "lmstudio",
       "model": "qwen2.5-coder-14b-instruct-mlx"
@@ -30,7 +30,7 @@
   // --- Edit Prediction End ---
   // ---
   // --- Langs and LSP ---
-  "inlay_hints": { "enabled": true },
+  //"inlay_hints": { "enabled": true },
   "languages": {
     "Go": {
       "format_on_save": "on",
@@ -107,6 +107,9 @@
   "buffer_font_fallbacks": ["Zed Plex Mono"],
   "buffer_font_size": 17,
   // "buffer_font_weight": 400,
+  "buffer_font_features": {
+    "calt": false
+  },
   "buffer_line_height": "comfortable",
   // "buffer_line_height": "standard",
   "ui_font_family": "Zed Plex Sans",
