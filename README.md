@@ -139,6 +139,24 @@ brew install --cask vivaldi
 
 # Developer Tools
 
+## Git
+
+### LazyGit
+https://github.com/jesseduffield/lazygit/
+
+```shell
+brew install lazygit
+```
+
+## DB
+
+### LazySQL
+https://github.com/jorgerojas26/lazysql
+
+```shell
+brew install lazysql
+```
+
 ## Docker Like Tools
 
 ### OrbStack
