@@ -5,12 +5,10 @@
     "default_model": {
       "provider": "lmstudio",
       "model": "qwen2.5-coder-14b-instruct-mlx"
-    },
-    "version": "2"
+    }
   },
   "language_models": {
     "openai": {
-      "version": "1",
       "api_url": "http://localhost:1234"
     },
     "lmstudio": {
@@ -103,10 +101,10 @@
     "metrics": false
   },
   // UI: font, theme
-  "buffer_font_family": "Victor Mono",
+  "buffer_font_family": "JetBrains Mono",
   "buffer_font_fallbacks": ["Zed Plex Mono"],
-  "buffer_font_size": 17,
-  // "buffer_font_weight": 400,
+  "buffer_font_size": 18,
+  // "buffer_font_weight": 500,
   "buffer_font_features": {
     "calt": false
   },
