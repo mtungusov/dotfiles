@@ -12,10 +12,21 @@
     "terminal.integrated.fontFamily": "'IosevkaTerm Nerd Font Mono',Menlo,Monaco,'Courier New',monospace",
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontLigatures.enabled": false,
-    "workbench.colorTheme": "sema light",
+    // == Dark Theme ==
+    "workbench.colorTheme": "JetBrains Darcula Theme",
+    "editor.tokenColorCustomizations": {
+        "comments": "#aa3300"
+    },
+    // == Dark Theme End ==
+    // == Light Theme ==
+    // "workbench.colorTheme": "sema light",
     // "workbench.colorCustomizations": {
     //     "editor.background": "#eeeeee" // Replace with your desired hex color code
     // },
+    // "editor.tokenColorCustomizations": {
+    //     "comments": "#aa3300"
+    // },
+    // == Light Theme End ==
     "workbench.startupEditor": "none",
     "zenMode.centerLayout": false,
     "zenMode.hideLineNumbers": false,
@@ -32,8 +43,5 @@
                 ],
             ],
         },
-    },
-    "editor.tokenColorCustomizations": {
-       "comments": "#cc9900"
     },
 }
