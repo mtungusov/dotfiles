@@ -1,15 +1,5 @@
 set -g fish_greeting
 
-# $PATH:
-if type -q /opt/homebrew/bin/brew
-    fish_add_path -g /opt/homebrew/bin
-end
-if type -q /usr/local/bin/brew
-    fish_add_path -g /usr/local/bin
-end
-
-set -l BREW_PREFIX "$(brew --prefix)"
-
 set -gx TERM "xterm-256color"
 set -gx LANG "en_US.UTF-8"
 set -gx LC_COLLATE "en_US.UTF-8"
@@ -18,27 +8,40 @@ set -gx LC_TYPE "en_US.UTF-8"
 # ARCHFLAGS = "-arch arm64" or "-arch x86_64"
 set -gx ARCHFLAGS "-arch $(uname -m)"
 
-set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/zlib/lib/pkgconfig"
-set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/ncurses/lib/pkgconfig"
-set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/readline/lib/pkgconfig"
-set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/sqlite/lib/pkgconfig"
-set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/openssl/lib/pkgconfig"
-set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/tcl-tk/lib/pkgconfig"
+# Homebrew
+if type -q /opt/homebrew/bin/brew
+    fish_add_path -g /opt/homebrew/bin
+end
+if type -q /usr/local/bin/brew
+    fish_add_path -g /usr/local/bin
+end
 
-set -gxa LDFLAGS "$(pkg-config zlib --libs)"
-set -gxa LDFLAGS "$(pkg-config tk --libs)"
-set -gxa LDFLAGS "$(pkg-config ncurses --libs)"
-set -gxa LDFLAGS "$(pkg-config readline --libs)"
-set -gxa LDFLAGS "$(pkg-config openssl --libs)"
-set -gxa LDFLAGS "-L$(brew --prefix bzip2)/lib"
-set -gxa LDFLAGS "-L$(brew --prefix sqlite)/lib"
+if type -q brew
+    set -l BREW_PREFIX "$(brew --prefix)"
+    set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/zlib/lib/pkgconfig"
+    set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/ncurses/lib/pkgconfig"
+    set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/readline/lib/pkgconfig"
+    set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/sqlite/lib/pkgconfig"
+    set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/openssl/lib/pkgconfig"
+    set -gxa PKG_CONFIG_PATH "$BREW_PREFIX/opt/tcl-tk/lib/pkgconfig"
+    set -gxa LDFLAGS "-L$(brew --prefix bzip2)/lib"
+    set -gxa LDFLAGS "-L$(brew --prefix sqlite)/lib"
+    set -gxa CPPFLAGS "-I$(brew --prefix bzip2)/include"
+    set -gxa CPPFLAGS "-I$(brew --prefix sqlite)/include"
+end
 
-set -gxa CPPFLAGS "$(pkg-config zlib --cflags)"
-set -gxa CPPFLAGS "$(pkg-config tk --cflags)"
-set -gxa CPPFLAGS "$(pkg-config readline --cflags)"
-set -gxa CPPFLAGS "$(pkg-config openssl --cflags)"
-set -gxa CPPFLAGS "-I$(brew --prefix bzip2)/include"
-set -gxa CPPFLAGS "-I$(brew --prefix sqlite)/include"
+if type -q pkg-config
+    set -gxa LDFLAGS "$(pkg-config zlib --libs)"
+    set -gxa LDFLAGS "$(pkg-config tk --libs)"
+    set -gxa LDFLAGS "$(pkg-config ncurses --libs)"
+    set -gxa LDFLAGS "$(pkg-config readline --libs)"
+    set -gxa LDFLAGS "$(pkg-config openssl --libs)"
+
+    set -gxa CPPFLAGS "$(pkg-config zlib --cflags)"
+    set -gxa CPPFLAGS "$(pkg-config tk --cflags)"
+    set -gxa CPPFLAGS "$(pkg-config readline --cflags)"
+    set -gxa CPPFLAGS "$(pkg-config openssl --cflags)"
+end
 
 # TCL and TK for Python
 # fish_add_path "$BREW_PREFIX/opt/tcl-tk/bin"
@@ -48,7 +51,7 @@ set -gxa CPPFLAGS "-I$(brew --prefix sqlite)/include"
 set -gx RUBY_CONFIGURE_OPTS --enable-yjit
 
 # Editor
-set -gx EDITOR "vi"
+set -gx EDITOR "nvim"
 
 if type -q emacs
    alias e "emacs -Q -nw -l '~/.config/emacs/nano.el'"
@@ -62,14 +65,16 @@ if status is-interactive
     end
 
     if type -q eza
-       alias l   "eza -lg"
+       alias l   "eza -lg --group-directories-first"
        alias ll  "eza -lga --group-directories-first"
-       alias lt  "eza --tree --level=3 --git-ignore --ignore-glob='.git|*.log'"
+       alias lt  "eza --tree --level=2 --git-ignore --ignore-glob='.git|*.log'"
        alias llt "eza --all --tree --level=3 --ignore-glob='.git|*.log'"
     end
 
     if type -q fzf
        fzf --fish | source
+       set -gx FZF_CTRL_T_OPTS "--walker-skip .git,node_modules,target --preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+       set -gx FZF_ALT_C_OPTS "--walker-skip .git,node_modules,target --preview 'eza --all --tree --level=2 {}'"
     end
 
     if type -q zoxide
