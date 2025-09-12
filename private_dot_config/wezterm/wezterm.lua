@@ -29,22 +29,22 @@ config.font = wezterm.font('Maple Mono NF')
 config.font_size = 16.0
 
 -- don't like bold fonts: change Bold -> Regular
-config.font_rules = {
-    {
-        intensity = 'Bold',
-        italic = false,
-        font = wezterm.font {
-            family = 'Input Mono Compressed',
-            weight = 'Regular',
-            stretch = "ExtraCondensed",
-        },
-    },
-}
+-- config.font_rules = {
+--     {
+--         intensity = 'Bold',
+--         italic = false,
+--         font = wezterm.font {
+--             family = 'Input Mono Compressed',
+--             weight = 'Regular',
+--             stretch = "ExtraCondensed",
+--         },
+--     },
+-- }
 
 -- Tabs Style
 config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
-    font = wezterm.font { family = 'Input', weight = 'Bold' },
+--     font = wezterm.font { family = 'Input', weight = 'Bold' },
     font_size = 12.0,
 }
 
