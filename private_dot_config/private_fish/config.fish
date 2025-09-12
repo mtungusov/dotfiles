@@ -65,7 +65,7 @@ if status is-interactive
     end
 
     if type -q eza
-       alias l   "eza -lg --group-directories-first"
+       alias l   "eza -lo --group-directories-first --no-permissions --no-user --no-time --icons=always"
        alias ll  "eza -lga --group-directories-first"
        alias lt  "eza --tree --level=2 --git-ignore --ignore-glob='.git|*.log'"
        alias llt "eza --all --tree --level=3 --ignore-glob='.git|*.log'"
