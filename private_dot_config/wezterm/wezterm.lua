@@ -24,8 +24,9 @@ end
 config.color_scheme = 'nord'
 
 -- config.font = wezterm.font 'Input Mono Compressed'
-config.font = wezterm.font('Input Mono Compressed', { weight = 'Light', stretch = "ExtraCondensed" })
-config.font_size = 18.0
+-- config.font = wezterm.font('Input Mono Compressed', { weight = 'Light', stretch = "ExtraCondensed" })
+config.font = wezterm.font('Maple Mono NF')
+config.font_size = 16.0
 
 -- don't like bold fonts: change Bold -> Regular
 config.font_rules = {

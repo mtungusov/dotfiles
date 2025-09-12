@@ -1,7 +1,7 @@
 {
-    "editor.fontFamily": "'JetBrains Mono','Fira Code',Menlo,Monaco,'Courier New',monospace",
-    "editor.fontSize": 18,
-    "editor.fontLigatures": false,
+    "editor.fontFamily": "'Maple Mono','JetBrains Mono','Fira Code',Menlo,Monaco,'Courier New',monospace",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": "'calt'",
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
     "go.lintTool": "golangci-lint",
@@ -9,9 +9,9 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "terminal.integrated.fontFamily": "'IosevkaTerm Nerd Font Mono',Menlo,Monaco,'Courier New',monospace",
+    "terminal.integrated.fontFamily": "'Maple Mono NF','IosevkaTerm Nerd Font Mono',Menlo,Monaco,'Courier New',monospace",
     "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontLigatures.enabled": false,
+    "terminal.integrated.fontLigatures.enabled": true,
     // == Dark Theme ==
     "workbench.colorTheme": "JetBrains Darcula Theme",
     "editor.tokenColorCustomizations": {
@@ -43,5 +43,8 @@
                 ],
             ],
         },
+    },
+    "editor.unicodeHighlight.allowedCharacters": {
+        "с": true
     },
 }
