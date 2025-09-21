@@ -42,6 +42,24 @@ chezmoi init --apply $GITHUB_USERNAME
 brew install git git-delta difftastic tmux fish starship eza coreutils ripgrep xh bat fd fzf zoxide yazi
 ```
 
+# Software DEV
+
+- pkg-config [Manage compile and link flags for libraries]
+- gmp [GNU multiple precision arithmetic library]
+- libyaml [YAML Parser]
+- ncurses [Text-based UI library]
+- openssl@3 [Cryptography and SSL/TLS Toolkit]
+- readline [Library for command-line editing]
+- sqlite [Command-line interface for SQLite]
+- tcl-tk [For Python]
+- xz [General-purpose data compression with high compression ratio](https://tukaani.org/xz/)
+- zlib [General-purpose lossless data-compression library]
+
+```
+brew install pkg-config gmp libyaml ncurses openssl@3 readline sqlite3 tcl-tk xz zlib
+```
+
+
 ## Fish
 
 ```
@@ -74,7 +92,7 @@ https://input.djr.com/
 
 ## font-symbols-only-nerd-font
 ```shell
-brew install font-symbols-only-nerd-font
+# brew install font-symbols-only-nerd-font
 ```
 
 # Editors
@@ -91,7 +109,7 @@ https://vscodium.com/
 ## NeoVim
 
 ```shell
-# brew install neovim
+brew install neovim
 ```
 
 ## Emacs
@@ -124,17 +142,17 @@ https://www.raycast.com/
 ## WezTerm
 
 ```shell
-brew install --cask wezterm
+brew install wezterm
 ```
 
 ## Web Browsers
 
 ```shell
-brew install --cask firefox
-brew install --cask tor-browser
+# brew install --cask firefox
+# brew install --cask tor-browser
 brew install --cask eloston-chromium
-brew install --cask brave-browser
-brew install --cask vivaldi
+# brew install --cask brave-browser
+# brew install --cask vivaldi
 ```
 
 # Developer Tools
@@ -166,10 +184,20 @@ https://orbstack.dev/
 brew install orbstack
 ```
 
-#### docker cli
+### docker cli
 
 ```
 brew install docker
+```
+
+### docker tools
+
+- lazydocker [Lazier way to manage everything docker](https://github.com/jesseduffield/lazydocker)
+- dive [Tool for exploring each layer in a docker image](https://github.com/wagoodman/dive)
+- Watchtower [A process for automating Docker container base image updates](https://github.com/containrrr/watchtower)
+
+```shell
+brew install lazydocker dive
 ```
 
 ## direnv
@@ -180,14 +208,6 @@ https://direnv.net/
 !!!
 ```shell
 # brew install direnv
-```
-
-## pkg-config
-
-Manage compile and link flags for libraries
-
-```
-brew install pkg-config zlib ncurses
 ```
 
 ## MISE
