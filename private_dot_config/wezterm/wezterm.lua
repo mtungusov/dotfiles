@@ -45,6 +45,7 @@ config.font_size = 16.0
 config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
 --     font = wezterm.font { family = 'Input', weight = 'Bold' },
+    font = wezterm.font { family = 'Maple Mono NF', weight = 'Bold' },
     font_size = 12.0,
 }
 
@@ -76,14 +77,19 @@ config.keys = {
         action = act.PasteFrom 'PrimarySelection',
     },
     -- Clears the scrollback and viewport leaving the prompt line the new first line.
+--    {
+--        key = 'K',
+--        mods = 'CTRL|SHIFT',
+--        action = act.ClearScrollback 'ScrollbackAndViewport',
+--    },
+--    {
+--        key = 'k',
+--        mods = 'SUPER',
+--        action = act.ClearScrollback 'ScrollbackAndViewport',
+--    },
     {
-        key = 'K',
-        mods = 'CTRL|SHIFT',
-        action = act.ClearScrollback 'ScrollbackAndViewport',
-    },
-    {
-        key = 'k',
-        mods = 'SUPER',
+	key = 'l',
+        mods = 'CTRL',
         action = act.ClearScrollback 'ScrollbackAndViewport',
     },
     { key = 'n', mods = 'SUPER', action = act.SpawnWindow },
