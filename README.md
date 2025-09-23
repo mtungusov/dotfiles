@@ -37,6 +37,7 @@ chezmoi init --apply $GITHUB_USERNAME
 
 - clifm [File Manager](https://github.com/leo-arch/clifm)
 - zellij [Zellij is a terminal workspace](https://zellij.dev/)
+- fx [Terminal JSON viewer](https://fx.wtf/)
 
 ```
 brew install git git-delta difftastic tmux fish starship eza coreutils ripgrep xh bat fd fzf zoxide yazi
