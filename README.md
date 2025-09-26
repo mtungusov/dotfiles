@@ -158,6 +158,12 @@ brew install --cask eloston-chromium
 
 # Developer Tools
 
+## ATAC (Arguably a Terminal API Client. Like Postman)
+https://github.com/Julien-cpsn/ATAC
+
+## k6 (A modern load testing tool, using Go and JavaScript)
+https://github.com/grafana/k6
+
 ## Git
 
 ### LazyGit
