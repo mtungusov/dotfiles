@@ -66,15 +66,6 @@ brew install git git-delta difftastic tmux starship eza coreutils ripgrep xh bat
 brew install pkg-config gmp libyaml ncurses openssl@3 readline sqlite3 tcl-tk xz zlib
 ```
 
-
-## Fish
-
-```
-echo $(which fish) | sudo tee -a /etc/shells
-chsh -s $(which fish)
-reboot!
-```
-
 ## Sublime Merge
 https://www.sublimemerge.com/
 
