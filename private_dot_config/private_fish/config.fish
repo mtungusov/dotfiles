@@ -10,7 +10,7 @@ set -gx ARCHFLAGS "-arch $(uname -m)"
 
 # Homebrew
 if type -q /opt/homebrew/bin/brew
-    fish_add_path -g /opt/homebrew/bin
+    eval "$(/opt/homebrew/bin/brew shellenv fish)"
 end
 if type -q /usr/local/bin/brew
     fish_add_path -g /usr/local/bin

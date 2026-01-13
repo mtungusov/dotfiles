@@ -6,6 +6,13 @@ xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+# Install fish
+```shell
+brew install fish
+echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
+```
+
 # Dotfiles Install
 
 ## Chezmoi dotfiles manager
@@ -22,7 +29,6 @@ chezmoi init --apply $GITHUB_USERNAME
 - [delta](https://github.com/dandavison/delta)
 - [difftastic](https://difftastic.wilfred.me.uk/)
 - tmux
-- fish
 - starship [Cross-shell prompt for astronauts](https://starship.rs)
 - eza [improved ls](https://github.com/eza-community/eza)
 - coreutils (gnu ls)
@@ -40,7 +46,7 @@ chezmoi init --apply $GITHUB_USERNAME
 - fx [Terminal JSON viewer](https://fx.wtf/)
 
 ```
-brew install git git-delta difftastic tmux fish starship eza coreutils ripgrep xh bat fd fzf zoxide yazi
+brew install git git-delta difftastic tmux starship eza coreutils ripgrep xh bat fd fzf zoxide yazi
 ```
 
 # Software DEV
