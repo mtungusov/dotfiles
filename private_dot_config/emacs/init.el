@@ -78,12 +78,12 @@
 
 ;;; Font settings
 
-(when (member "Input Mono Compressed" (font-family-list))
-  (set-face-attribute 'default nil :family "Input Mono Compressed" :height 180 :weight 'light)
-  (set-face-attribute 'fixed-pitch nil :family "Input Mono Compressed" :height 1.0)
+(when (member "Maple Mono NF" (font-family-list))
+  (set-face-attribute 'default nil :family "Maple Mono NF" :height 180 :weight 'light)
+  (set-face-attribute 'fixed-pitch nil :family "Maple Mono NF" :height 1.0)
   (set-face-attribute 'bold nil :weight 'regular))
-(when (member "Input Serif Compressed" (font-family-list))
-  (set-face-attribute 'variable-pitch nil :family "Input Serif Compressed" :height 1.0))
+(when (member "Maple Mono NL" (font-family-list))
+  (set-face-attribute 'variable-pitch nil :family "Maple Mono NL" :height 1.0))
 (when (member  "Symbola" (font-family-list))
   (set-fontset-font t 'symbol "Symbola" nil))
 (setopt line-spacing 0.2)

@@ -13,7 +13,7 @@
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontLigatures.enabled": true,
     // == Dark Theme ==
-    "workbench.colorTheme": "JetBrains Darcula Theme",
+    "workbench.colorTheme": "Modus Operandi Tinted",
     "editor.tokenColorCustomizations": {
         "comments": "#aa3300"
     },
@@ -47,4 +47,6 @@
     "editor.unicodeHighlight.allowedCharacters": {
         "с": true
     },
+    "redhat.telemetry.enabled": false,
+    "update.showReleaseNotes": false,
 }

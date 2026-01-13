@@ -22,7 +22,7 @@
 
 ;; --- Typography stack -------------------------------------------------------
 (set-face-attribute 'default nil
-                    :height 180 :weight 'light :family "Input Mono Compressed")
+                    :height 180 :weight 'light :family "Maple Mono NF")
 (set-face-attribute 'bold nil :weight 'regular)
 (set-face-attribute 'bold-italic nil :weight 'regular)
 (set-display-table-slot standard-display-table 'truncation (make-glyph-code ?…))

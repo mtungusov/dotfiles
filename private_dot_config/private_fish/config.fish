@@ -48,7 +48,7 @@ end
 # PYTHON_CONFIGURE_OPTS="--with-tcltk-includes='$(pkg-config tk --cflags)' --with-tcltk-libs='$(pkg-config tk --libs)'"
 
 # Ruby enable YJIT
-set -gx RUBY_CONFIGURE_OPTS --enable-yjit
+# set -gx RUBY_CONFIGURE_OPTS --enable-yjit
 
 # Editor
 set -gx EDITOR "nvim"
@@ -103,17 +103,17 @@ if type -q git
     alias gsh "git show --ext-diff"
 end
 
-if type -q mise
-    if status is-interactive
-        mise activate fish | source
-    else
-        mise activate fish --shims | source
-    end
-end
-
-# if type -q direnv
-#     direnv hook fish | source
+# if type -q mise
+#     if status is-interactive
+#         mise activate fish | source
+#     else
+#         mise activate fish --shims | source
+#     end
 # end
+
+if type -q direnv
+    direnv hook fish | source
+end
 
 if type -q starship
     starship init fish | source

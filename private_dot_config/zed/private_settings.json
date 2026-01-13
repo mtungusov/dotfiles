@@ -1,20 +1,21 @@
 // Zed settings
 {
+  "vim_mode": true,
   // --- LLM Start ---
-  "agent": {
-    "default_model": {
-      "provider": "lmstudio",
-      "model": "qwen2.5-coder-14b-instruct-mlx"
-    }
-  },
-  "language_models": {
-    "openai": {
-      "api_url": "http://localhost:1234"
-    },
-    "lmstudio": {
-      "api_url": "http://localhost:1234/api/v0"
-    }
-  },
+  // "agent": {
+  //   "default_model": {
+  //     "provider": "lmstudio",
+  //     "model": "qwen2.5-coder-14b-instruct-mlx"
+  //   }
+  // },
+  // "language_models": {
+  //   "openai": {
+  //     "api_url": "http://localhost:1234"
+  //   },
+  //   "lmstudio": {
+  //     "api_url": "http://localhost:1234/api/v0"
+  //   }
+  // },
   // --- LLM End ---
   // ---
   // --- Edit Prediction Start ---
@@ -101,8 +102,8 @@
     "metrics": false
   },
   // UI: font, theme
-  "buffer_font_family": "JetBrains Mono",
-  "buffer_font_fallbacks": ["Zed Plex Mono"],
+  "buffer_font_family": "Maple Mono",
+  "buffer_font_fallbacks": ["Zed Mono"],
   "buffer_font_size": 18,
   // "buffer_font_weight": 500,
   "buffer_font_features": {
@@ -110,13 +111,13 @@
   },
   "buffer_line_height": "comfortable",
   // "buffer_line_height": "standard",
-  "ui_font_family": "Zed Plex Sans",
+  "ui_font_family": "Zed Sans",
   "ui_font_size": 14,
   // Theme
   "theme": {
     "mode": "light",
-    // "light": "Modus Operandi Tinted",
-    "light": "GitHub Light Monochrome",
+    "light": "Modus Operandi Tinted",
+    // "light": "GitHub Light Monochrome",
     // "dark": "VSCode Dark Modern",
     "dark": "VSCode Dark Modern"
   },
