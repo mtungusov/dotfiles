@@ -46,7 +46,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
 --     font = wezterm.font { family = 'Input', weight = 'Bold' },
     font = wezterm.font { family = 'Maple Mono NF', weight = 'Bold' },
-    font_size = 12.0,
+    font_size = 10.0,
 }
 
 config.use_dead_keys = false
@@ -108,13 +108,18 @@ config.keys = {
     },
     {
         key = '-',
-        mods = 'CTRL|SHIFT|ALT',
+        mods = 'CMD|ALT',
         action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
     },
     {
-        key = '|',
-        mods = 'CTRL|SHIFT|ALT',
+        key = '+',
+        mods = 'CMD|ALT',
         action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+    },
+    {
+        key = 'e',
+        mods = 'CMD',
+        action = wezterm.action.CloseCurrentPane { confirm = true },
     },
     { key = 'LeftArrow',  mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Left', },
     { key = 'RightArrow', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Right', },

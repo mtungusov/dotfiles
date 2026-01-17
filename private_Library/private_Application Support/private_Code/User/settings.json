@@ -1,36 +1,62 @@
 {
-    "editor.fontFamily": "'Maple Mono','JetBrains Mono','Fira Code',Menlo,Monaco,'Courier New',monospace",
+    "editor.fontFamily": "'Maple Mono NF',Menlo,Monaco,'Courier New',monospace",
     "editor.fontSize": 16,
-    "editor.fontLigatures": "'calt'",
+    "editor.fontLigatures": "'ss03'",
     "editor.minimap.enabled": false,
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "interface": {
+            "italic": true
+            },
+            "selfParameter": {
+            "italic": true
+            },
+            "keyword": {
+            "italic": true
+            },
+            "*.static": {
+            "italic": true
+            }
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        // "comments": "#aa3300",
+        "textMateRules": [
+            {
+                "scope": [
+                    "constant.language.undefined",
+                    "constant.language.null",
+                    "constant.language.nullptr",
+                    "meta.type keyword.operator.expression.typeof",
+                    "meta.type keyword.operator.expression.keyof",
+                    "keyword.control",
+                    "keyword.function",
+                    "keyword.operator.new",
+                    "keyword.operator.borrow.and.rust",
+                    "storage.type",
+                    "storage.modifier",
+                    "variable.language.this",
+                    "markup.italic"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    },
+    "editor.unicodeHighlight.allowedCharacters": {
+        "с": true
+    },
     "explorer.confirmDelete": false,
-    "go.lintTool": "golangci-lint",
-    "go.toolsManagement.autoUpdate": true,
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "terminal.integrated.fontFamily": "'Maple Mono NF','IosevkaTerm Nerd Font Mono',Menlo,Monaco,'Courier New',monospace",
+    "go.lintTool": "golangci-lint",
+    "go.toolsManagement.autoUpdate": true,
+    "redhat.telemetry.enabled": false,
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontLigatures.enabled": true,
-    // == Dark Theme ==
-    "workbench.colorTheme": "Modus Operandi Tinted",
-    "editor.tokenColorCustomizations": {
-        "comments": "#aa3300"
-    },
-    // == Dark Theme End ==
-    // == Light Theme ==
-    // "workbench.colorTheme": "sema light",
-    // "workbench.colorCustomizations": {
-    //     "editor.background": "#eeeeee" // Replace with your desired hex color code
-    // },
-    // "editor.tokenColorCustomizations": {
-    //     "comments": "#aa3300"
-    // },
-    // == Light Theme End ==
-    "workbench.startupEditor": "none",
-    "zenMode.centerLayout": false,
-    "zenMode.hideLineNumbers": false,
-    "zenMode.showTabs": "single",
+    "update.showReleaseNotes": false,
     "vscode-neovim.compositeKeys": {
         "jk": {
             // Use lua to execute any logic
@@ -44,9 +70,9 @@
             ],
         },
     },
-    "editor.unicodeHighlight.allowedCharacters": {
-        "с": true
-    },
-    "redhat.telemetry.enabled": false,
-    "update.showReleaseNotes": false,
+    "workbench.colorTheme": "Modus Operandi Tinted",
+    "workbench.startupEditor": "none",
+    "zenMode.centerLayout": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.showTabs": "single",
 }

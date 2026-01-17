@@ -1,66 +1,38 @@
 // Zed settings
 {
   "vim_mode": true,
-  // --- LLM Start ---
-  // "agent": {
-  //   "default_model": {
-  //     "provider": "lmstudio",
-  //     "model": "qwen2.5-coder-14b-instruct-mlx"
-  //   }
-  // },
-  // "language_models": {
-  //   "openai": {
-  //     "api_url": "http://localhost:1234"
-  //   },
-  //   "lmstudio": {
-  //     "api_url": "http://localhost:1234/api/v0"
-  //   }
-  // },
-  // --- LLM End ---
-  // ---
-  // --- Edit Prediction Start ---
-  "edit_predictions": {
-    "mode": "subtle"
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "show_edit_predictions": true,
-  // --- Edit Prediction End ---
-  // ---
   // --- Langs and LSP ---
   //"inlay_hints": { "enabled": true },
   "languages": {
     "Go": {
       "format_on_save": "on",
-      "language_servers": ["gopls", "golangci-lint"]
+      "language_servers": ["gopls", "golangci-lint"],
     },
     "Python": {
       "indent_guides": {
-        "enabled": true
-      }
+        "enabled": true,
+      },
     },
     "Ruby": {
-      "language_servers": ["ruby-lsp", "!solargraph", "!rubocop", "..."]
-    }
+      "language_servers": ["ruby-lsp", "!solargraph", "!rubocop", "..."],
+    },
   },
   "lsp": {
     "golangci-lint": {
       "initialization_options": {
-        "command": ["golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1"]
-      }
+        "command": ["golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1"],
+      },
     },
     "ruby-lsp": {
       "initialization_options": {
         "enabledFeatures": {
           "diagnostics": false,
-          "onTypeFormatting": false
-        }
-      }
-    }
+          "onTypeFormatting": false,
+        },
+      },
+    },
   },
   // --- Langs and LSP End ---
-  // ---
   "file_scan_exclusions": [
     "**/.git",
     "**/.venv",
@@ -72,62 +44,56 @@
     "**/*_cache",
     "**/__pycache__",
     "**/.*-version",
-    "**/.DS_Store"
+    "**/.DS_Store",
   ],
   "git": {
     "inline_blame": {
-      "enabled": false
-    }
+      "enabled": false,
+    },
   },
   "indent_guides": {
-    "enabled": false
+    "enabled": false,
   },
   "preferred_line_length": 140,
-  "restore_on_startup": "none",
   "scrollbar": { "show": "auto" },
   "soft_wrap": "bounded",
   "tabs": {
-    "git_status": false
+    "git_status": false,
   },
   "terminal": {
     "dock": "right",
     "font_size": 14,
     "line_height": "standard",
     "toolbar": {
-      "breadcrumbs": false
-    }
+      "breadcrumbs": false,
+    },
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   // UI: font, theme
-  "buffer_font_family": "Maple Mono",
-  "buffer_font_fallbacks": ["Zed Mono"],
-  "buffer_font_size": 18,
-  // "buffer_font_weight": 500,
+  "buffer_font_family": "Maple Mono NF",
+  "buffer_font_fallbacks": [".ZedMono"],
+  "buffer_font_size": 16,
   "buffer_font_features": {
-    "calt": false
+    "calt": false,
   },
   "buffer_line_height": "comfortable",
-  // "buffer_line_height": "standard",
-  "ui_font_family": "Zed Sans",
-  "ui_font_size": 14,
+  "ui_font_family": ".ZedSans",
+  "ui_font_size": 10,
   // Theme
   "theme": {
     "mode": "light",
     "light": "Modus Operandi Tinted",
-    // "light": "GitHub Light Monochrome",
-    // "dark": "VSCode Dark Modern",
-    "dark": "VSCode Dark Modern"
+    "dark": "VSCode Dark Modern",
   },
   "experimental.theme_overrides": {
     // "editor.background": "#f8faf8",
     "syntax": {
       "comment": {
-        // "font_weight": 300,
-        "font_style": "normal"
-      }
-    }
-  }
+        "font_style": "normal",
+      },
+    },
+  },
 }
