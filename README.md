@@ -314,6 +314,8 @@ https://mise.jdx.dev/lang/python.html
 UV (https://docs.astral.sh/uv/) ?
 
 ```shell
+mise use -g uv@latest
+
 brew install readline sqlite3 xz zlib tcl-tk
 mise latest python
 mise use -g --pin python@3.12.1
