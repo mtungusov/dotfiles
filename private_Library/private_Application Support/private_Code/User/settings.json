@@ -20,7 +20,7 @@
         }
     },
     "editor.tokenColorCustomizations": {
-        // "comments": "#aa3300",
+        "comments": "#aa3300",
         "textMateRules": [
             {
                 "scope": [
@@ -70,7 +70,7 @@
             ],
         },
     },
-    "workbench.colorTheme": "Modus Operandi Tinted",
+    "workbench.colorTheme": "Maple Light",
     "workbench.startupEditor": "none",
     "zenMode.centerLayout": false,
     "zenMode.hideLineNumbers": false,
