@@ -181,6 +181,8 @@ https://github.com/jorgerojas26/lazysql
 ```shell
 brew install lazysql
 ```
+### SqlIt
+https://github.com/Maxteabag/sqlit
 
 ## Docker Like Tools
 
