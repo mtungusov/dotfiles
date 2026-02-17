@@ -2,7 +2,10 @@
 {
   "vim_mode": true,
   // --- Langs and LSP ---
-  //"inlay_hints": { "enabled": true },
+  "edit_predictions": {
+    "mode": "subtle", // or "eager"
+  },
+  // "show_edit_predictions": false,
   "languages": {
     "Go": {
       "format_on_save": "on",
@@ -81,11 +84,11 @@
   },
   "buffer_line_height": "comfortable",
   "ui_font_family": ".ZedSans",
-  "ui_font_size": 10,
+  "ui_font_size": 14,
   // Theme
   "theme": {
     "mode": "light",
-    "light": "Modus Operandi Tinted",
+    "light": "Maple Light",
     "dark": "VSCode Dark Modern",
   },
   "experimental.theme_overrides": {
