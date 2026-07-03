@@ -1,11 +1,15 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+vim.o.cursorline = true
+vim.o.incsearch = true
+
 -- show line num
 vim.o.number = true
-vim.o.cursorline = true
+vim.o.relativenumber = true
+
+vim.o.smartindent = true
 vim.o.wrap = false
-vim.o.incsearch = true
 
 -- remap leader key
 keymap("n", "<Space>", "", opts)
@@ -63,14 +67,14 @@ else
         local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
         if vim.v.shell_error ~= 0 then
             vim.api.nvim_echo({
-                      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-                      { out, "WarningMsg" },
-                      { "\nPress any key to exit..." },
-                }, true, {})
-                vim.fn.getchar()
-                os.exit(1)
-            end
+                { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+                { out, "WarningMsg" },
+                { "\nPress any key to exit..." },
+            }, true, {})
+            vim.fn.getchar()
+            os.exit(1)
         end
+    end
     vim.opt.rtp:prepend(lazypath)
     -- Setup lazy.nvim
     require("lazy").setup({
