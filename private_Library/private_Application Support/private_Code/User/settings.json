@@ -47,32 +47,17 @@
     "editor.unicodeHighlight.allowedCharacters": {
         "с": true
     },
-    "explorer.confirmDelete": false,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
-    "go.lintTool": "golangci-lint",
-    "go.toolsManagement.autoUpdate": true,
-    "redhat.telemetry.enabled": false,
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontLigatures.enabled": true,
     "update.showReleaseNotes": false,
-    "vscode-neovim.compositeKeys": {
-        "jk": {
-            // Use lua to execute any logic
-            "command": "vscode-neovim.lua",
-            "args": [
-                [
-                    "local code = require('vscode')",
-                    "code.action('vscode-neovim.escape')",
-                    "code.action('workbench.action.files.save')",
-                ],
-            ],
-        },
-    },
-    "workbench.colorTheme": "Maple Light",
     "workbench.startupEditor": "none",
-    "zenMode.centerLayout": false,
+    "workbench.colorTheme": "Maple Dark",
+    "workbench.panel.defaultLocation": "right", 
     "zenMode.hideLineNumbers": false,
     "zenMode.showTabs": "single",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    // "go.lintTool": "golangci-lint",
+    // "go.toolsManagement.autoUpdate": true,
 }
