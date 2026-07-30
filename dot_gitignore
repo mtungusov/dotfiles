@@ -42,6 +42,7 @@ venv
 
 # Builds and Logs
 *.log
+bin
 build
 classes
 files/
@@ -56,6 +57,7 @@ tmp
 
 # Large files
 *.csv
+*.db
 *.jar
 *.pdf
 *.sqlite
@@ -63,6 +65,7 @@ tmp
 *.tsv
 *.zip
 :memory*
+storage/
 
 # Devs files
 gradle
@@ -73,4 +76,4 @@ package-lock.json
 *.pid
 
 # Sensitive info
-secrets.e*
+secrets.*
