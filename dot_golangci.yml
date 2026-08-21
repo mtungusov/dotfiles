@@ -1,0 +1,27 @@
+version: "2"
+
+linters:
+  default: none
+  enable:
+    # --- Critical Errors & Safety ---
+    - errcheck      # Catches when the LLM forgets to handle an error
+    - govet         # Standard static analysis (shadowing, printf formatting)
+    - ineffassign   # Catches redundant assignments often left by AI iterations
+    - staticcheck   # Standard advanced static analysis fixes
+
+    # --- Code Quality & Performance ---
+    - revive        # Fast, highly configurable drop-in replacement for golint
+    - gocritic      # Finds bugs, performance risks, and style violations
+    - gocyclo       # Keeps LLM methods from becoming too complex/long
+    - unconvert     # Removes redundant type conversions standard to AI code
+  exclusions:
+    generated: lax
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+
+run:
+  timeout: 5m
+  issues-exit-code: 1
+  tests: true
