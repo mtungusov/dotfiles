@@ -1,6 +1,7 @@
 {
+  "cli_default_open_behavior": "new_window",
   "project_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "outline_panel": {
     "dock": "left"
@@ -25,6 +26,7 @@
   "languages": {
     "Go": {
       "format_on_save": "on",
+      "language_servers": ["gopls", "golangci-lint"],
     },
     "Python": {
       "indent_guides": {
@@ -35,7 +37,14 @@
   "lsp": {
     "golangci-lint": {
       "initialization_options": {
-        "command": ["golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1"],
+        "command": [
+          "golangci-lint",
+          "run",
+          "--output.json.path",
+          "stdout",
+          "--show-stats=false",
+          "--output.text.path="
+      ],
       },
     },
   },
@@ -57,9 +66,10 @@
   "ui_font_family": ".ZedSans",
   "ui_font_size": 14,
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Maple Light",
-    "dark": "Maple Dark",
+    "dark": "One Dark Pro Night Flat",
+    // "dark": "Maple Dark",
   },
   "file_scan_exclusions": [
     "**/.git",
