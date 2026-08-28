@@ -3,13 +3,7 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 
 -- This table will hold the configuration.
-local config = {}
-
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
-if wezterm.config_builder then
-    config = wezterm.config_builder()
-end
+local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 
@@ -23,28 +17,13 @@ end
 -- config.color_scheme = 'Poimandres'
 config.color_scheme = 'nord'
 
--- config.font = wezterm.font 'Input Mono Compressed'
 -- config.font = wezterm.font('Input Mono Compressed', { weight = 'Light', stretch = "ExtraCondensed" })
-config.font = wezterm.font('Maple Mono NF')
-config.font_size = 16.0
-
--- don't like bold fonts: change Bold -> Regular
--- config.font_rules = {
---     {
---         intensity = 'Bold',
---         italic = false,
---         font = wezterm.font {
---             family = 'Input Mono Compressed',
---             weight = 'Regular',
---             stretch = "ExtraCondensed",
---         },
---     },
--- }
+config.font = wezterm.font('Maple Mono SL NF')
+config.font_size = 18.0
 
 -- Tabs Style
 config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
---     font = wezterm.font { family = 'Input', weight = 'Bold' },
     font = wezterm.font { family = 'Maple Mono NF', weight = 'Bold' },
     font_size = 10.0,
 }
@@ -56,8 +35,8 @@ config.use_dead_keys = false
 
 config.window_decorations = "TITLE | RESIZE"
 
-config.initial_cols = 120
-config.initial_rows = 60
+config.initial_cols = 150
+config.initial_rows = 40
 
 config.disable_default_key_bindings = true
 config.keys = {
@@ -77,16 +56,6 @@ config.keys = {
         action = act.PasteFrom 'PrimarySelection',
     },
     -- Clears the scrollback and viewport leaving the prompt line the new first line.
---    {
---        key = 'K',
---        mods = 'CTRL|SHIFT',
---        action = act.ClearScrollback 'ScrollbackAndViewport',
---    },
---    {
---        key = 'k',
---        mods = 'SUPER',
---        action = act.ClearScrollback 'ScrollbackAndViewport',
---    },
     {
 	key = 'l',
         mods = 'CTRL',
@@ -112,7 +81,7 @@ config.keys = {
         action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
     },
     {
-        key = '+',
+        key = '=',
         mods = 'CMD|ALT',
         action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
     },
