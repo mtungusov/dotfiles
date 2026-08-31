@@ -66,7 +66,7 @@ config.keys = {
     {
         key = 'w',
         mods = 'CMD',
-        action = wezterm.action.CloseCurrentTab { confirm = true },
+        action = wezterm.action.CloseCurrentPane { confirm = true },
     },
     { key = 'PageUp',   mods = 'SUPER', action = act.ScrollByPage(-1) },
     { key = 'PageDown', mods = 'SUPER', action = act.ScrollByPage(1) },
@@ -84,11 +84,6 @@ config.keys = {
         key = '=',
         mods = 'CMD|ALT',
         action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
-    },
-    {
-        key = 'e',
-        mods = 'CMD',
-        action = wezterm.action.CloseCurrentPane { confirm = true },
     },
     { key = 'LeftArrow',  mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Left', },
     { key = 'RightArrow', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Right', },
